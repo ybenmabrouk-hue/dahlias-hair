@@ -1,0 +1,127 @@
+{% comment %}
+  Section 3c — Problem / Solution
+  Split-screen Before / After. Background #F5EEE6.
+  Mobile: stacked vertically, After (Dahlia way) shown first.
+{% endcomment %}
+
+<section
+  class="prob-sol"
+  data-section-id="{{ section.id }}"
+  data-section-type="problem-solution"
+>
+  <div class="prob-sol__eyebrow">{{ 'sections.problem_solution.eyebrow' | t }}</div>
+
+  <div class="prob-sol__grid">
+
+    {%- comment -%} Before column — rendered second in DOM, ordered first on desktop {%- endcomment -%}
+    <div class="prob-sol__col prob-sol__col--before" data-col="before">
+      <div class="prob-sol__image-wrap">
+        {%- if section.settings.before_image != blank -%}
+          {{
+            section.settings.before_image
+            | image_url: width: 900
+            | image_tag:
+              loading: 'lazy',
+              class: 'prob-sol__image',
+              sizes: '(min-width: 1024px) 50vw, 100vw',
+              widths: '600, 900, 1200'
+          }}
+        {%- else -%}
+          <div class="prob-sol__image-placeholder">
+            <span>{{ 'sections.problem_solution.before_headline' | t }}</span>
+          </div>
+        {%- endif -%}
+        <span class="prob-sol__label prob-sol__label--before">
+          {{ 'sections.problem_solution.before_headline' | t }}
+        </span>
+      </div>
+      <div class="prob-sol__body">
+        <h2 class="prob-sol__headline prob-sol__headline--before">
+          {{ 'sections.problem_solution.before_headline' | t }}
+        </h2>
+        <ul class="prob-sol__bullets">
+          <li>
+            <span class="prob-sol__bullet-icon prob-sol__bullet-icon--before" aria-hidden="true">✕</span>
+            {{ 'sections.problem_solution.before_bullet_1' | t }}
+          </li>
+          <li>
+            <span class="prob-sol__bullet-icon prob-sol__bullet-icon--before" aria-hidden="true">✕</span>
+            {{ 'sections.problem_solution.before_bullet_2' | t }}
+          </li>
+          <li>
+            <span class="prob-sol__bullet-icon prob-sol__bullet-icon--before" aria-hidden="true">✕</span>
+            {{ 'sections.problem_solution.before_bullet_3' | t }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {%- comment -%} After column — Dahlia way {%- endcomment -%}
+    <div class="prob-sol__col prob-sol__col--after" data-col="after">
+      <div class="prob-sol__image-wrap">
+        {%- if section.settings.after_image != blank -%}
+          {{
+            section.settings.after_image
+            | image_url: width: 900
+            | image_tag:
+              loading: 'lazy',
+              class: 'prob-sol__image',
+              sizes: '(min-width: 1024px) 50vw, 100vw',
+              widths: '600, 900, 1200'
+          }}
+        {%- else -%}
+          <div class="prob-sol__image-placeholder prob-sol__image-placeholder--after">
+            <span>{{ 'sections.problem_solution.after_headline' | t }}</span>
+          </div>
+        {%- endif -%}
+        <span class="prob-sol__label prob-sol__label--after">
+          {{ 'sections.problem_solution.after_headline' | t }}
+        </span>
+      </div>
+      <div class="prob-sol__body">
+        <h2 class="prob-sol__headline prob-sol__headline--after">
+          {{ 'sections.problem_solution.after_headline' | t }}
+        </h2>
+        <ul class="prob-sol__bullets">
+          <li>
+            <span class="prob-sol__bullet-icon prob-sol__bullet-icon--after" aria-hidden="true">✦</span>
+            {{ 'sections.problem_solution.after_bullet_1' | t }}
+          </li>
+          <li>
+            <span class="prob-sol__bullet-icon prob-sol__bullet-icon--after" aria-hidden="true">✦</span>
+            {{ 'sections.problem_solution.after_bullet_2' | t }}
+          </li>
+          <li>
+            <span class="prob-sol__bullet-icon prob-sol__bullet-icon--after" aria-hidden="true">✦</span>
+            {{ 'sections.problem_solution.after_bullet_3' | t }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Problem / Solution",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before image"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Problem / Solution"
+    }
+  ]
+}
+{% endschema %}
