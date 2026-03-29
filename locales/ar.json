@@ -103,7 +103,8 @@
       "review_count": "أكثر من ٢٬٤٠٠ تقييم",
       "trustpilot_label": "ممتاز على Trustpilot",
       "ugc_label": "نتائج حقيقية من عملاء حقيقيين",
-      "ticker": "\"أفضل شراء قمت به هذا العام\" ✦ \"شعري لم يبدُ بهذه الروعة من قبل\" ✦ \"توفر عليّ ٤٠ دقيقة كل صباح\" ✦ \"يستحق كل ريال\" ✦ \"الجهاز الوحيد الذي أحتاجه\" ✦ \"Best purchase I've made all year\" ✦ \"My hair has never looked this good\" ✦ \"Saves me 40 minutes every morning\" ✦ \"Worth every riyal\" ✦ \"The only styler I'll ever need\""
+      "ticker": "\"أفضل شراء قمت به هذا العام\" ✦ \"شعري لم يبدُ بهذه الروعة من قبل\" ✦ \"توفر عليّ ٤٠ دقيقة كل صباح\" ✦ \"يستحق كل ريال\" ✦ \"الجهاز الوحيد الذي أحتاجه\" ✦ \"Best purchase I've made all year\" ✦ \"My hair has never looked this good\" ✦ \"Saves me 40 minutes every morning\" ✦ \"Worth every riyal\" ✦ \"The only styler I'll ever need\"",
+      "ticker_label": "آراء العملاء"
     },
     "faq": {
       "eyebrow": "الأسئلة الشائعة",
@@ -124,7 +125,9 @@
     "sticky_cart": {
       "product_name": "جهاز داليا برو",
       "add_to_cart": "أضيفي للسلة",
-      "tamara_note": "قسّطي على ٤ دفعات مع تمارا"
+      "tamara_note": "قسّطي على ٤ دفعات مع تمارا",
+      "aria_label": "إضافة سريعة للسلة",
+      "stars_label": "٤.٩ من ٥ نجوم"
     }
   },
   "product": {
@@ -147,7 +150,11 @@
       "returns": "إرجاع خلال ٣٠ يوماً",
       "warranty": "ضمان في المملكة"
     },
-    "gallery_thumbnail_label": "عرض الصورة {{ index }}"
+    "gallery_thumbnail_label": "عرض الصورة {{ index }}",
+    "qty_decrease": "تقليل الكمية",
+    "qty_increase": "زيادة الكمية",
+    "stars_label": "{{ rating }} من ٥ نجوم، {{ count }}",
+    "tabs_label": "تفاصيل المنتج"
   },
   "payment_note": "نقبل مدى و STC Pay",
   "cart": {

@@ -73,7 +73,7 @@
     </div>
 
     {%- comment -%} Scrolling review ticker {%- endcomment -%}
-    <div class="social-proof__ticker" aria-label="Customer reviews" aria-live="off">
+    <div class="social-proof__ticker" aria-label="{{ 'sections.social_proof.ticker_label' | t }}" aria-live="off">
       <div class="social-proof__ticker-track">
         {%- comment -%} Duplicate for seamless loop {%- endcomment -%}
         <span class="social-proof__ticker-text">{{ 'sections.social_proof.ticker' | t }}</span>

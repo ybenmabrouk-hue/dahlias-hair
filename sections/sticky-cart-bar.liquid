@@ -8,14 +8,14 @@
   class="sticky-cart"
   data-section-id="{{ section.id }}"
   data-section-type="sticky-cart-bar"
-  aria-label="Quick add to cart"
+  aria-label="{{ 'sections.sticky_cart.aria_label' | t }}"
   role="complementary"
 >
   <div class="sticky-cart__inner">
 
     <div class="sticky-cart__info">
       <span class="sticky-cart__name">{{ 'sections.sticky_cart.product_name' | t }}</span>
-      <div class="sticky-cart__stars" aria-label="4.9 out of 5 stars">
+      <div class="sticky-cart__stars" aria-label="{{ 'sections.sticky_cart.stars_label' | t }}">
         {%- for i in (1..5) -%}
           <svg class="sticky-cart__star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
             <path d="M8 1l1.85 3.74 4.13.6-2.99 2.91.71 4.12L8 10.42l-3.7 1.95.71-4.12L2.02 5.34l4.13-.6z"/>

@@ -38,7 +38,7 @@
       "scroll_down": "Scroll"
     },
     "trust_bar": {
-      "shipping": "Free shipping over 200 ر.س",
+      "shipping": "Free shipping over 200 SAR",
       "tamara": "Tamara · 4 interest-free payments",
       "returns": "30-day returns"
     },
@@ -103,13 +103,14 @@
       "review_count": "2,400+ reviews",
       "trustpilot_label": "Excellent on Trustpilot",
       "ugc_label": "Real results from real customers",
-      "ticker": "\"Best purchase I've made all year\" ✦ \"My hair has never looked this good\" ✦ \"Saves me 40 minutes every morning\" ✦ \"Worth every riyal\" ✦ \"The only styler I'll ever need\" ✦ \"أفضل شراء قمت به هذا العام\" ✦ \"شعري لم يبدُ بهذه الروعة من قبل\" ✦ \"توفر عليّ ٤٠ دقيقة كل صباح\" ✦ \"يستحق كل ريال\" ✦ \"الجهاز الوحيد الذي أحتاجه\""
+      "ticker": "\"Best purchase I've made all year\" ✦ \"My hair has never looked this good\" ✦ \"Saves me 40 minutes every morning\" ✦ \"Worth every riyal\" ✦ \"The only styler I'll ever need\" ✦ \"أفضل شراء قمت به هذا العام\" ✦ \"شعري لم يبدُ بهذه الروعة من قبل\" ✦ \"توفر عليّ ٤٠ دقيقة كل صباح\" ✦ \"يستحق كل ريال\" ✦ \"الجهاز الوحيد الذي أحتاجه\"",
+      "ticker_label": "Customer reviews"
     },
     "faq": {
       "eyebrow": "FAQ",
       "headline": "Common questions",
       "q1": "Do you ship across Saudi Arabia?",
-      "a1": "Yes — we offer free standard shipping on all orders above 200 ر.س across the Kingdom, with express options available at checkout.",
+      "a1": "Yes — we offer free standard shipping on all orders above 200 SAR across the Kingdom, with express options available at checkout.",
       "q2": "What is your return policy?",
       "a2": "We accept returns within 30 days of delivery. The product must be in its original condition and packaging. Contact our support team to initiate a return.",
       "q3": "Am I eligible for Tamara installments?",
@@ -124,7 +125,9 @@
     "sticky_cart": {
       "product_name": "Dahlia Pro Styler",
       "add_to_cart": "Add to Cart",
-      "tamara_note": "Pay in 4 with Tamara"
+      "tamara_note": "Pay in 4 with Tamara",
+      "aria_label": "Quick add to cart",
+      "stars_label": "4.9 out of 5 stars"
     }
   },
   "product": {
@@ -147,7 +150,11 @@
       "returns": "30-day Returns",
       "warranty": "KSA Warranty"
     },
-    "gallery_thumbnail_label": "View image {{ index }}"
+    "gallery_thumbnail_label": "View image {{ index }}",
+    "qty_decrease": "Decrease quantity",
+    "qty_increase": "Increase quantity",
+    "stars_label": "{{ rating }} out of 5 stars, {{ count }}",
+    "tabs_label": "Product details"
   },
   "payment_note": "We accept Mada and STC Pay",
   "cart": {

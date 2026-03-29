@@ -97,7 +97,7 @@
       <h1 class="pd-title">{{ product.title }}</h1>
 
       <!-- Star rating -->
-      <div class="pd-stars" aria-label="4.9 out of 5 stars, 2400+ reviews">
+      <div class="pd-stars" aria-label="{{ 'product.stars_label' | t: rating: '4.9', count: '2,400+' }}">
         <div class="pd-stars__icons" aria-hidden="true">
           {%- for i in (1..5) -%}
             <svg class="pd-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
@@ -169,7 +169,7 @@
               type="button"
               class="pd-qty__btn"
               data-qty-minus
-              aria-label="{{ 'accessibility.skip_to_content' | t }}"
+              aria-label="{{ 'product.qty_decrease' | t }}"
             >−</button>
             <input
               id="pd-qty-input-{{ section_id }}"
@@ -185,7 +185,7 @@
               type="button"
               class="pd-qty__btn"
               data-qty-plus
-              aria-label="{{ 'accessibility.skip_to_content' | t }}"
+              aria-label="{{ 'product.qty_increase' | t }}"
             >+</button>
           </div>
         </div>
@@ -236,7 +236,7 @@
        ============================================================ -->
   <div class="pd-tabs" data-pd-tabs>
 
-    <div class="pd-tabs__nav" role="tablist" aria-label="Product details">
+    <div class="pd-tabs__nav" role="tablist" aria-label="{{ 'product.tabs_label' | t }}">
       {%- for tab_id in tab_ids -%}
         <button
           class="pd-tabs__tab{% if forloop.first %} is-active{% endif %}"
