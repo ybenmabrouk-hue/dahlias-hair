@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "min_height": 100,
+        "show_overlay": true,
+        "overlay_opacity": 20
+      }
+    },
+    "trust-bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "problem-solution": {
+      "type": "problem-solution",
+      "settings": {}
+    },
+    "feature-highlights": {
+      "type": "feature-highlights",
+      "settings": {}
+    },
+    "bundle-showcase": {
+      "type": "bundle-showcase",
+      "settings": {}
+    },
+    "how-it-works": {
+      "type": "how-it-works",
+      "settings": {}
+    },
+    "social-proof": {
+      "type": "social-proof",
+      "blocks": {
+        "ugc-1": { "type": "ugc_item", "settings": {} },
+        "ugc-2": { "type": "ugc_item", "settings": {} },
+        "ugc-3": { "type": "ugc_item", "settings": {} },
+        "ugc-4": { "type": "ugc_item", "settings": {} },
+        "ugc-5": { "type": "ugc_item", "settings": {} },
+        "ugc-6": { "type": "ugc_item", "settings": {} }
+      },
+      "block_order": ["ugc-1", "ugc-2", "ugc-3", "ugc-4", "ugc-5", "ugc-6"],
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    },
+    "sticky-cart-bar": {
+      "type": "sticky-cart-bar",
+      "settings": {
+        "price": "799"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust-bar",
+    "problem-solution",
+    "feature-highlights",
+    "bundle-showcase",
+    "how-it-works",
+    "social-proof",
+    "faq",
+    "sticky-cart-bar"
+  ]
+}

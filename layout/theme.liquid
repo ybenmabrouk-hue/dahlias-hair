@@ -105,6 +105,15 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'header.css' | asset_url | stylesheet_tag }}
     {{ 'footer.css' | asset_url | stylesheet_tag }}
+    {{ 'section-hero.css' | asset_url | stylesheet_tag }}
+    {{ 'section-trust-bar.css' | asset_url | stylesheet_tag }}
+    {{ 'section-problem-solution.css' | asset_url | stylesheet_tag }}
+    {{ 'section-feature-highlights.css' | asset_url | stylesheet_tag }}
+    {{ 'section-bundle-showcase.css' | asset_url | stylesheet_tag }}
+    {{ 'section-how-it-works.css' | asset_url | stylesheet_tag }}
+    {{ 'section-social-proof.css' | asset_url | stylesheet_tag }}
+    {{ 'section-faq.css' | asset_url | stylesheet_tag }}
+    {{ 'section-sticky-cart-bar.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body>
@@ -137,5 +146,9 @@
     </script>
 
     {{ 'header.js' | asset_url | script_tag }}
+    {{ 'section-feature-highlights.js' | asset_url | script_tag }}
+    {{ 'section-social-proof.js' | asset_url | script_tag }}
+    {{ 'section-faq.js' | asset_url | script_tag }}
+    {{ 'section-sticky-cart-bar.js' | asset_url | script_tag }}
   </body>
 </html>
