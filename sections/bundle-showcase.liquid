@@ -1,0 +1,128 @@
+{% comment %}
+  Section 3e — Bundle Showcase
+  Background #FAF6F0. Two product cards side by side.
+  Card 2 ("The Full Kit") shown first on mobile.
+{% endcomment %}
+
+<section
+  class="bundle"
+  data-section-id="{{ section.id }}"
+  data-section-type="bundle-showcase"
+>
+  <div class="bundle__inner">
+
+    <p class="bundle__eyebrow">{{ 'sections.bundle.eyebrow' | t }}</p>
+
+    <div class="bundle__grid">
+
+      {%- comment -%} Card 1 — The Styler (order-2 on mobile) {%- endcomment -%}
+      <div class="bundle__card bundle__card--1">
+        <div class="bundle__card-image-wrap">
+          {%- if section.settings.card_1_image != blank -%}
+            {{
+              section.settings.card_1_image
+              | image_url: width: 600
+              | image_tag:
+                loading: 'lazy',
+                class: 'bundle__card-image',
+                widths: '400, 600, 800'
+            }}
+          {%- else -%}
+            <div class="bundle__card-placeholder"></div>
+          {%- endif -%}
+        </div>
+        <div class="bundle__card-body">
+          <h2 class="bundle__card-name">{{ 'sections.bundle.card_1_name' | t }}</h2>
+          <p class="bundle__card-includes">{{ 'sections.bundle.card_1_includes' | t }}</p>
+          <div class="bundle__card-pricing">
+            <span class="bundle__price">
+              {{ 'sections.bundle.card_1_price' | t }}
+              <span class="bundle__currency">{{ settings.currency_symbol }}</span>
+            </span>
+          </div>
+          <a
+            class="btn btn--primary bundle__cta"
+            href="{{ section.settings.card_1_url | default: routes.root_url }}"
+          >
+            {{ 'sections.bundle.card_1_cta' | t }}
+          </a>
+        </div>
+      </div>
+
+      {%- comment -%} Card 2 — The Full Kit (order-1 on mobile) {%- endcomment -%}
+      <div class="bundle__card bundle__card--2">
+        <div class="bundle__badge">{{ 'sections.bundle.card_2_badge' | t }}</div>
+        <div class="bundle__card-image-wrap">
+          {%- if section.settings.card_2_image != blank -%}
+            {{
+              section.settings.card_2_image
+              | image_url: width: 600
+              | image_tag:
+                loading: 'lazy',
+                class: 'bundle__card-image',
+                widths: '400, 600, 800'
+            }}
+          {%- else -%}
+            <div class="bundle__card-placeholder bundle__card-placeholder--2"></div>
+          {%- endif -%}
+        </div>
+        <div class="bundle__card-body">
+          <h2 class="bundle__card-name">{{ 'sections.bundle.card_2_name' | t }}</h2>
+          <p class="bundle__card-includes">{{ 'sections.bundle.card_2_includes' | t }}</p>
+          <div class="bundle__card-pricing">
+            <span class="bundle__price">
+              {{ 'sections.bundle.card_2_price' | t }}
+              <span class="bundle__currency">{{ settings.currency_symbol }}</span>
+            </span>
+            <span class="bundle__price-original">
+              {{ 'sections.bundle.card_2_original_price' | t }}
+              <span class="bundle__currency">{{ settings.currency_symbol }}</span>
+            </span>
+          </div>
+          <p class="bundle__tamara-note">{{ 'sections.bundle.card_2_tamara' | t }}</p>
+          <a
+            class="btn btn--primary bundle__cta"
+            href="{{ section.settings.card_2_url | default: routes.root_url }}"
+          >
+            {{ 'sections.bundle.card_2_cta' | t }}
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bundle Showcase",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Card 1 image — The Styler"
+    },
+    {
+      "type": "url",
+      "id": "card_1_url",
+      "label": "Card 1 product URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Card 2 image — The Full Kit"
+    },
+    {
+      "type": "url",
+      "id": "card_2_url",
+      "label": "Card 2 product URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle Showcase"
+    }
+  ]
+}
+{% endschema %}
