@@ -1,0 +1,67 @@
+{% comment %}
+  Section 3h — FAQ Accordion
+  Background #F5EEE6. 6 questions, smooth expand/collapse.
+  RTL accordion layout for Arabic.
+{% endcomment %}
+
+{%- assign faq_count = 6 -%}
+
+<section
+  class="faq"
+  data-section-id="{{ section.id }}"
+  data-section-type="faq"
+>
+  <div class="faq__inner">
+
+    <div class="faq__header">
+      <p class="faq__eyebrow">{{ 'sections.faq.eyebrow' | t }}</p>
+      <h2 class="faq__headline">{{ 'sections.faq.headline' | t }}</h2>
+    </div>
+
+    <div class="faq__list" role="list">
+      {%- for i in (1..faq_count) -%}
+        <div class="faq__item" data-faq-item role="listitem">
+          <button
+            class="faq__question"
+            aria-expanded="false"
+            aria-controls="faq-answer-{{ section.id }}-{{ i }}"
+            id="faq-btn-{{ section.id }}-{{ i }}"
+            data-faq-trigger
+          >
+            <span class="faq__question-text">{{ 'sections.faq.q' | append: i | t }}</span>
+            <span class="faq__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <line class="faq__icon-h" x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </span>
+          </button>
+          <div
+            class="faq__answer"
+            id="faq-answer-{{ section.id }}-{{ i }}"
+            role="region"
+            aria-labelledby="faq-btn-{{ section.id }}-{{ i }}"
+            hidden
+          >
+            <div class="faq__answer-inner">
+              <p>{{ 'sections.faq.a' | append: i | t }}</p>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}
