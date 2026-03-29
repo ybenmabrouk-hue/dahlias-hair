@@ -1,0 +1,27 @@
+{% comment %}
+  Product trust badges row — three items with small icons
+  Used inside sections/product-dahlia.liquid
+{% endcomment %}
+
+<div class="pd-trust">
+
+  <div class="pd-trust__item">
+    <span class="pd-trust__icon" aria-hidden="true">{%- render 'icon-shipping' -%}</span>
+    <span class="pd-trust__text">{{ 'product.trust.free_shipping' | t }}</span>
+  </div>
+
+  <div class="pd-trust__item">
+    <span class="pd-trust__icon" aria-hidden="true">{%- render 'icon-returns' -%}</span>
+    <span class="pd-trust__text">{{ 'product.trust.returns' | t }}</span>
+  </div>
+
+  <div class="pd-trust__item">
+    <span class="pd-trust__icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M10 2L3 5.5v5C3 14 6.1 17.4 10 18.5 13.9 17.4 17 14 17 10.5v-5L10 2z"/>
+      </svg>
+    </span>
+    <span class="pd-trust__text">{{ 'product.trust.warranty' | t }}</span>
+  </div>
+
+</div>

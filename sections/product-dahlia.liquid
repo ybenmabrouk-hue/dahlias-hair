@@ -1,0 +1,386 @@
+{% comment %}
+  Section: product-dahlia
+  Custom product template — image gallery + product info + tabs + upsell
+  RTL-aware via <html dir="">.
+{% endcomment %}
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign tamara_raw = current_variant.price | divided_by: 4 -%}
+{%- assign tamara_amount = tamara_raw | money_without_currency -%}
+
+{%- assign tab_ids = 'description,whats_included,how_to_use,shipping_returns' | split: ',' -%}
+{%- assign section_id = section.id -%}
+
+<div
+  class="pd"
+  data-section-id="{{ section_id }}"
+  data-section-type="product-dahlia"
+  data-product="{{ product | json | escape }}"
+>
+
+  <!-- ============================================================
+       TOP: Gallery (left) + Product Info (right)
+       In RTL the grid auto-mirrors.
+       ============================================================ -->
+  <div class="pd-top">
+
+    <!-- ---- Gallery ---- -->
+    <div class="pd-gallery" id="pd-gallery-{{ section_id }}">
+
+      <div class="pd-gallery__main" id="pd-main-{{ section_id }}">
+        {%- if product.media.size > 0 -%}
+          {%- for media in product.media -%}
+            {%- if media.media_type == 'image' -%}
+              <div
+                class="pd-gallery__slide{% if forloop.first %} is-active{% endif %}"
+                data-media-id="{{ media.id }}"
+              >
+                {{
+                  media
+                  | image_url: width: 1000
+                  | image_tag:
+                    loading: forloop.first | if: 'eager', 'lazy',
+                    class: 'pd-gallery__img',
+                    sizes: '(min-width:1024px) 50vw, 100vw',
+                    widths: '600, 900, 1200',
+                    alt: media.alt | escape
+                }}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- else -%}
+          <div class="pd-gallery__slide is-active">
+            <div class="pd-gallery__placeholder">
+              {{ 'product-1' | placeholder_svg_tag: 'pd-gallery__placeholder-svg' }}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if product.media.size > 1 -%}
+        <div class="pd-gallery__thumbs" role="list" aria-label="{{ 'product.gallery_thumbnail_label' | t: index: '' }}">
+          {%- assign thumb_idx = 0 -%}
+          {%- for media in product.media -%}
+            {%- if media.media_type == 'image' -%}
+              {%- assign thumb_idx = thumb_idx | plus: 1 -%}
+              <button
+                class="pd-gallery__thumb{% if forloop.first %} is-active{% endif %}"
+                data-media-id="{{ media.id }}"
+                type="button"
+                role="listitem"
+                aria-label="{{ 'product.gallery_thumbnail_label' | t: index: thumb_idx }}"
+                aria-pressed="{{ forloop.first }}"
+              >
+                {{
+                  media
+                  | image_url: width: 160
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'pd-gallery__thumb-img',
+                    alt: media.alt | escape
+                }}
+              </button>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+    </div><!-- /pd-gallery -->
+
+    <!-- ---- Product Info ---- -->
+    <div class="pd-info">
+
+      <!-- Eyebrow: product type -->
+      {%- if product.type != blank -%}
+        <p class="pd-eyebrow">{{ product.type }}</p>
+      {%- endif -%}
+
+      <!-- Title -->
+      <h1 class="pd-title">{{ product.title }}</h1>
+
+      <!-- Star rating -->
+      <div class="pd-stars" aria-label="4.9 out of 5 stars, 2400+ reviews">
+        <div class="pd-stars__icons" aria-hidden="true">
+          {%- for i in (1..5) -%}
+            <svg class="pd-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor">
+              <path d="M8 1l1.85 3.74 4.13.6-2.99 2.91.71 4.12L8 10.42l-3.7 1.95.71-4.12L2.02 5.34l4.13-.6z"/>
+            </svg>
+          {%- endfor -%}
+        </div>
+        <span class="pd-stars__score">4.9</span>
+        <span class="pd-stars__count">{{ 'sections.social_proof.review_count' | t }}</span>
+      </div>
+
+      <!-- Price -->
+      <div class="pd-price" data-price-container>
+        {%- if current_variant.compare_at_price > current_variant.price -%}
+          <span class="pd-price__sale" data-price>{{ current_variant.price | money }}</span>
+          <span class="pd-price__compare" data-compare-price>{{ current_variant.compare_at_price | money }}</span>
+        {%- else -%}
+          <span class="pd-price__regular" data-price>{{ current_variant.price | money }}</span>
+        {%- endif -%}
+      </div>
+
+      <!-- Tamara installment -->
+      <p class="pd-tamara" data-tamara-line>
+        {{ 'product.tamara' | t: amount: tamara_amount }}
+      </p>
+
+      <!-- Variant selector -->
+      {%- unless product.has_only_default_variant -%}
+        {%- for option in product.options_with_values -%}
+          <div class="pd-variants" data-option-position="{{ forloop.index }}">
+            <p class="pd-variants__label">{{ option.name }}</p>
+            <div class="pd-variants__pills" role="group" aria-label="{{ option.name }}">
+              {%- for value in option.values -%}
+                <button
+                  class="pd-variant-pill{% if option.selected_value == value %} is-selected{% endif %}"
+                  type="button"
+                  data-option-position="{{ forloop.index }}"
+                  data-value="{{ value | escape }}"
+                  aria-pressed="{{ option.selected_value == value }}"
+                >
+                  {{ value }}
+                </button>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endunless -%}
+
+      <!-- Form: quantity + add to cart -->
+      <form
+        action="{{ routes.cart_add_url }}"
+        method="post"
+        id="pd-form-{{ section_id }}"
+        class="pd-form"
+        data-product-form
+      >
+        <input
+          type="hidden"
+          name="id"
+          value="{{ current_variant.id }}"
+          data-variant-id
+        >
+
+        <!-- Quantity -->
+        <div class="pd-qty">
+          <label class="pd-qty__label" for="pd-qty-input-{{ section_id }}">
+            {{ 'product.quantity_label' | t }}
+          </label>
+          <div class="pd-qty__control" role="group">
+            <button
+              type="button"
+              class="pd-qty__btn"
+              data-qty-minus
+              aria-label="{{ 'accessibility.skip_to_content' | t }}"
+            >−</button>
+            <input
+              id="pd-qty-input-{{ section_id }}"
+              type="number"
+              name="quantity"
+              value="1"
+              min="1"
+              class="pd-qty__input"
+              data-qty-input
+              aria-label="{{ 'product.quantity_label' | t }}"
+            >
+            <button
+              type="button"
+              class="pd-qty__btn"
+              data-qty-plus
+              aria-label="{{ 'accessibility.skip_to_content' | t }}"
+            >+</button>
+          </div>
+        </div>
+
+        <!-- Add to Cart -->
+        <button
+          type="submit"
+          name="add"
+          class="btn btn--primary pd-atc"
+          data-atc-btn
+          {% unless current_variant.available %}disabled{% endunless %}
+        >
+          {%- if current_variant.available -%}
+            {{ 'product.add_to_cart' | t }}
+          {%- else -%}
+            {{ 'product.sold_out' | t }}
+          {%- endif -%}
+        </button>
+
+      </form>
+
+      <!-- Buy Now (outside form — submits form then redirects) -->
+      <button
+        type="button"
+        class="btn btn--secondary pd-buy-now"
+        data-buy-now
+        data-form-id="pd-form-{{ section_id }}"
+      >
+        {{ 'product.buy_now' | t }}
+      </button>
+
+      <!-- Trust badges -->
+      {%- render 'product-trust-badges' -%}
+
+    </div><!-- /pd-info -->
+
+  </div><!-- /pd-top -->
+
+  <!-- ============================================================
+       TABS: Description · What's Included · How to Use · Shipping
+       Desktop: tab row with active underline
+       Mobile: accordion
+       ============================================================ -->
+  <div class="pd-tabs" data-pd-tabs>
+
+    <div class="pd-tabs__nav" role="tablist" aria-label="Product details">
+      {%- for tab_id in tab_ids -%}
+        <button
+          class="pd-tabs__tab{% if forloop.first %} is-active{% endif %}"
+          role="tab"
+          aria-selected="{{ forloop.first }}"
+          aria-controls="pd-panel-{{ tab_id }}-{{ section_id }}"
+          id="pd-tab-{{ tab_id }}-{{ section_id }}"
+          data-tab="{{ tab_id }}"
+          type="button"
+        >
+          {{ 'product.tabs.' | append: tab_id | t }}
+        </button>
+      {%- endfor -%}
+    </div>
+
+    <div class="pd-tabs__panels">
+      {%- for tab_id in tab_ids -%}
+        <div
+          class="pd-tabs__panel{% if forloop.first %} is-active{% endif %}"
+          id="pd-panel-{{ tab_id }}-{{ section_id }}"
+          role="tabpanel"
+          aria-labelledby="pd-tab-{{ tab_id }}-{{ section_id }}"
+          {% unless forloop.first %}hidden{% endunless %}
+        >
+          <div class="pd-tabs__panel-inner">
+            {%- if tab_id == 'description' -%}
+              {%- if section.settings.tab_description != blank -%}
+                {{ section.settings.tab_description }}
+              {%- else -%}
+                {{ product.description }}
+              {%- endif -%}
+            {%- elsif tab_id == 'whats_included' -%}
+              {{ section.settings.tab_whats_included }}
+            {%- elsif tab_id == 'how_to_use' -%}
+              {{ section.settings.tab_how_to_use }}
+            {%- elsif tab_id == 'shipping_returns' -%}
+              {{ section.settings.tab_shipping_returns }}
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div><!-- /pd-tabs -->
+
+  <!-- ============================================================
+       UPSELL: Complete your routine
+       ============================================================ -->
+  {%- if section.settings.upsell_product != blank -%}
+    {%- assign upsell = all_products[section.settings.upsell_product] -%}
+    {%- if upsell.available -%}
+      {%- assign upsell_variant = upsell.selected_or_first_available_variant -%}
+      <div class="pd-upsell">
+        <div class="pd-upsell__inner">
+
+          <h2 class="pd-upsell__heading">{{ 'product.upsell_heading' | t }}</h2>
+
+          <div class="pd-upsell__card">
+            <div class="pd-upsell__card-img-wrap">
+              {%- if upsell.featured_image != blank -%}
+                {{
+                  upsell.featured_image
+                  | image_url: width: 480
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'pd-upsell__card-img',
+                    alt: upsell.title | escape
+                }}
+              {%- else -%}
+                <div class="pd-upsell__img-placeholder"></div>
+              {%- endif -%}
+            </div>
+            <div class="pd-upsell__card-body">
+              <p class="pd-upsell__card-type">{{ upsell.type }}</p>
+              <h3 class="pd-upsell__card-title">{{ upsell.title }}</h3>
+              <div class="pd-upsell__card-price">
+                {%- if upsell_variant.compare_at_price > upsell_variant.price -%}
+                  <span class="pd-upsell__price pd-upsell__price--sale">{{ upsell_variant.price | money }}</span>
+                  <span class="pd-upsell__price--compare">{{ upsell_variant.compare_at_price | money }}</span>
+                {%- else -%}
+                  <span class="pd-upsell__price">{{ upsell_variant.price | money }}</span>
+                {%- endif -%}
+              </div>
+              <a
+                class="btn btn--primary pd-upsell__cta"
+                href="{{ upsell.url }}"
+              >
+                {{ 'product.upsell_cta' | t }}
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+
+</div><!-- /pd -->
+
+<script>
+  // Pass variant data to JS
+  var __pdVariants_{{ section_id | replace: '-', '_' }} = {{ product.variants | json }};
+  var __pdOptions_{{ section_id | replace: '-', '_' }} = {{ product.options | json }};
+</script>
+
+{% schema %}
+{
+  "name": "Product — Dahlia",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Tab content"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_description",
+      "label": "Description",
+      "info": "Leave blank to use the product description"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_whats_included",
+      "label": "What's Included"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_how_to_use",
+      "label": "How to Use"
+    },
+    {
+      "type": "richtext",
+      "id": "tab_shipping_returns",
+      "label": "Shipping & Returns"
+    },
+    {
+      "type": "header",
+      "content": "Upsell"
+    },
+    {
+      "type": "product",
+      "id": "upsell_product",
+      "label": "Upsell product",
+      "info": "Shown below the tabs as a \"Complete your routine\" upsell"
+    }
+  ]
+}
+{% endschema %}

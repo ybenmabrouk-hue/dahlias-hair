@@ -126,6 +126,28 @@
       "tamara_note": "Pay in 4 with Tamara"
     }
   },
+  "product": {
+    "add_to_cart": "Add to Cart",
+    "buy_now": "Buy Now",
+    "quantity_label": "Quantity",
+    "sold_out": "Sold Out",
+    "unavailable": "Unavailable",
+    "tamara": "or 4 × {{ amount }} ر.س interest-free with Tamara",
+    "upsell_heading": "Complete your routine",
+    "upsell_cta": "Add to Cart",
+    "tabs": {
+      "description": "Description",
+      "whats_included": "What's Included",
+      "how_to_use": "How to Use",
+      "shipping_returns": "Shipping & Returns"
+    },
+    "trust": {
+      "free_shipping": "Free Shipping over 200 SAR",
+      "returns": "30-day Returns",
+      "warranty": "KSA Warranty"
+    },
+    "gallery_thumbnail_label": "View image {{ index }}"
+  },
   "cart": {
     "title": "Your Cart",
     "empty": "Your cart is empty",

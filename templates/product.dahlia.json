@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-dahlia",
+      "settings": {
+        "tab_description": "",
+        "tab_whats_included": "<p>Dahlia Pro Styler × 1</p>",
+        "tab_how_to_use": "<ol><li>Section your hair into manageable portions.</li><li>Glide the Dahlia Styler smoothly from root to tip.</li><li>Repeat for each section until your look is complete.</li></ol>",
+        "tab_shipping_returns": "<p>Free standard shipping on orders over 200 ر.س. Express delivery available at checkout. Returns accepted within 30 days of delivery in original condition.</p>"
+      }
+    }
+  },
+  "order": ["main"]
+}

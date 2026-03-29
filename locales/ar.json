@@ -126,6 +126,28 @@
       "tamara_note": "قسّطي على ٤ دفعات مع تمارا"
     }
   },
+  "product": {
+    "add_to_cart": "أضيفي للسلة",
+    "buy_now": "اشتري الآن",
+    "quantity_label": "الكمية",
+    "sold_out": "نفدت الكمية",
+    "unavailable": "غير متاح",
+    "tamara": "أو ٤ × {{ amount }} ر.س بدون فوائد مع تمارا",
+    "upsell_heading": "أكملي روتينك",
+    "upsell_cta": "أضيفي للسلة",
+    "tabs": {
+      "description": "الوصف",
+      "whats_included": "ما يتضمنه الطقم",
+      "how_to_use": "طريقة الاستخدام",
+      "shipping_returns": "الشحن والإرجاع"
+    },
+    "trust": {
+      "free_shipping": "شحن مجاني فوق ٢٠٠ ريال",
+      "returns": "إرجاع خلال ٣٠ يوماً",
+      "warranty": "ضمان في المملكة"
+    },
+    "gallery_thumbnail_label": "عرض الصورة {{ index }}"
+  },
   "cart": {
     "title": "سلة التسوق",
     "empty": "سلتك فارغة",
