@@ -1,0 +1,15 @@
+{
+  "current": {
+    "color_bg": "#F5EEE6",
+    "color_primary": "#6B1228",
+    "color_white": "#FAF6F0",
+    "color_gold": "#F0DADA",
+    "color_muted": "#F0DADA",
+    "heading_font_weight": "300",
+    "body_font_weight": "400",
+    "currency_code": "SAR",
+    "currency_symbol": "ر.س",
+    "currency_symbol_position": "after"
+  },
+  "presets": {}
+}

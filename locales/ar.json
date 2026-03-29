@@ -1,0 +1,70 @@
+{
+  "accessibility": {
+    "skip_to_content": "تخطى إلى المحتوى"
+  },
+  "general": {
+    "currency": {
+      "code": "SAR",
+      "symbol": "ر.س"
+    }
+  },
+  "cart": {
+    "title": "سلة التسوق",
+    "empty": "سلتك فارغة",
+    "subtotal": "المجموع الفرعي",
+    "checkout": "إتمام الشراء",
+    "continue_shopping": "مواصلة التسوق",
+    "item_count": {
+      "one": "منتج واحد",
+      "two": "منتجان",
+      "few": "{{ count }} منتجات",
+      "other": "{{ count }} منتج"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "أضف إلى السلة",
+      "sold_out": "نفدت الكمية",
+      "unavailable": "غير متاح",
+      "quantity": "الكمية",
+      "price": "السعر",
+      "sale": "تخفيض",
+      "from_price_html": "يبدأ من <span>{{ price }}</span>"
+    }
+  },
+  "collections": {
+    "title": "المجموعات",
+    "all": "جميع المنتجات",
+    "sort_by": "ترتيب حسب",
+    "filter_by": "تصفية"
+  },
+  "navigation": {
+    "shop": "تسوق",
+    "about": "عن المتجر",
+    "contact": "اتصل بنا"
+  },
+  "pagination": {
+    "previous": "السابق",
+    "next": "التالي"
+  },
+  "search": {
+    "placeholder": "بحث",
+    "no_results": "لا نتائج لـ \"{{ terms }}\""
+  },
+  "customer": {
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج",
+    "register": "إنشاء حساب",
+    "account": "حسابي",
+    "orders": "الطلبات",
+    "addresses": "العناوين"
+  },
+  "sections": {
+    "header": {
+      "cart": "السلة ({{ count }})"
+    },
+    "footer": {
+      "copyright": "© {{ year }} {{ shop_name }}. جميع الحقوق محفوظة."
+    }
+  }
+}

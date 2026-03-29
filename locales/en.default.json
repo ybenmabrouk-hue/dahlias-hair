@@ -1,0 +1,68 @@
+{
+  "accessibility": {
+    "skip_to_content": "Skip to content"
+  },
+  "general": {
+    "currency": {
+      "code": "SAR",
+      "symbol": "ر.س"
+    }
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "continue_shopping": "Continue shopping",
+    "item_count": {
+      "one": "{{ count }} item",
+      "other": "{{ count }} items"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity",
+      "price": "Price",
+      "sale": "Sale",
+      "from_price_html": "From <span>{{ price }}</span>"
+    }
+  },
+  "collections": {
+    "title": "Collections",
+    "all": "All products",
+    "sort_by": "Sort by",
+    "filter_by": "Filter"
+  },
+  "navigation": {
+    "shop": "Shop",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "search": {
+    "placeholder": "Search",
+    "no_results": "No results for \"{{ terms }}\""
+  },
+  "customer": {
+    "login": "Log in",
+    "logout": "Log out",
+    "register": "Create account",
+    "account": "Account",
+    "orders": "Orders",
+    "addresses": "Addresses"
+  },
+  "sections": {
+    "header": {
+      "cart": "Cart ({{ count }})"
+    },
+    "footer": {
+      "copyright": "© {{ year }} {{ shop_name }}. All rights reserved."
+    }
+  }
+}
