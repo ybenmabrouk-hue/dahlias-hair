@@ -1,0 +1,138 @@
+/* ============================================================
+   Section 3i — Sticky Add-to-Cart Bar
+   Fixed to bottom viewport. Hidden until hero scrolls out.
+   Mobile: always visible.
+   ============================================================ */
+
+.sticky-cart {
+  position: fixed;
+  bottom: 0;
+  inset-inline: 0;
+  z-index: 90;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gold);
+  padding-block: 0.875rem;
+  padding-inline: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sticky-cart.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Always visible on mobile regardless of scroll */
+@media (max-width: 767px) {
+  .sticky-cart {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ---- Inner layout ---- */
+.sticky-cart__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* ---- Product info ---- */
+.sticky-cart__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.sticky-cart__name {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: #2A2018;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[lang="ar"] .sticky-cart__name {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+.sticky-cart__stars {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  color: var(--color-primary);
+}
+
+.sticky-cart__rating-score {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-inline-start: 0.25rem;
+}
+
+/* ---- Pricing ---- */
+.sticky-cart__pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+  flex-shrink: 0;
+}
+
+[dir="rtl"] .sticky-cart__pricing {
+  align-items: flex-start;
+}
+
+.sticky-cart__price {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #2A2018;
+}
+
+.sticky-cart__tamara {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+[lang="ar"] .sticky-cart__tamara {
+  font-family: var(--font-arabic);
+}
+
+/* ---- CTA ---- */
+.sticky-cart__cta {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding-inline: 1.75rem;
+}
+
+/* ---- Mobile adjustments ---- */
+@media (max-width: 599px) {
+  .sticky-cart__inner {
+    gap: 0.75rem;
+  }
+
+  .sticky-cart__pricing {
+    align-items: flex-start;
+  }
+
+  .sticky-cart__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}

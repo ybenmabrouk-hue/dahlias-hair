@@ -1,0 +1,72 @@
+{% comment %}
+  Section 3i — Sticky Add-to-Cart Bar
+  Appears after scrolling past the hero. Background #FAF6F0, top border #F0DADA.
+  Mobile: always visible.
+{% endcomment %}
+
+<div
+  class="sticky-cart"
+  data-section-id="{{ section.id }}"
+  data-section-type="sticky-cart-bar"
+  aria-label="Quick add to cart"
+  role="complementary"
+>
+  <div class="sticky-cart__inner">
+
+    <div class="sticky-cart__info">
+      <span class="sticky-cart__name">{{ 'sections.sticky_cart.product_name' | t }}</span>
+      <div class="sticky-cart__stars" aria-label="4.9 out of 5 stars">
+        {%- for i in (1..5) -%}
+          <svg class="sticky-cart__star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+            <path d="M8 1l1.85 3.74 4.13.6-2.99 2.91.71 4.12L8 10.42l-3.7 1.95.71-4.12L2.02 5.34l4.13-.6z"/>
+          </svg>
+        {%- endfor -%}
+        <span class="sticky-cart__rating-score">4.9</span>
+      </div>
+    </div>
+
+    <div class="sticky-cart__pricing">
+      <span class="sticky-cart__price">
+        {%- if section.settings.price != blank -%}
+          {{ section.settings.price }} {{ settings.currency_symbol }}
+        {%- else -%}
+          799 {{ settings.currency_symbol }}
+        {%- endif -%}
+      </span>
+      <span class="sticky-cart__tamara">{{ 'sections.sticky_cart.tamara_note' | t }}</span>
+    </div>
+
+    <a
+      class="btn btn--primary sticky-cart__cta"
+      href="{{ section.settings.product_url | default: routes.root_url }}"
+    >
+      {{ 'sections.sticky_cart.add_to_cart' | t }}
+    </a>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Sticky Cart Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "price",
+      "label": "Display price",
+      "default": "799",
+      "info": "Shown next to the currency symbol from theme settings"
+    },
+    {
+      "type": "url",
+      "id": "product_url",
+      "label": "Product / cart URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Cart Bar"
+    }
+  ]
+}
+{% endschema %}
