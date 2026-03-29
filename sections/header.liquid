@@ -1,0 +1,164 @@
+{% comment %}
+  Global site header — sticky, minimal
+  RTL/LTR driven by <html dir=""> set in layout/theme.liquid
+{% endcomment %}
+
+<header
+  class="site-header"
+  data-section-id="{{ section.id }}"
+  data-section-type="header"
+>
+  <div class="header-inner">
+
+    {%- comment -%} Language toggle — inline-start {%- endcomment -%}
+    <div class="header-lang" aria-label="{{ 'header.language' | t }}">
+      {%- for locale in shop.published_locales -%}
+        {%- if locale.iso_code == request.locale.iso_code -%}
+          <span
+            class="lang-item lang-item--active"
+            aria-current="true"
+            lang="{{ locale.iso_code }}"
+          >
+            {%- if locale.iso_code == 'ar' -%}عربي{%- else -%}EN{%- endif -%}
+          </span>
+        {%- else -%}
+          <a
+            class="lang-item"
+            href="{{ locale.root_url }}"
+            hreflang="{{ locale.iso_code }}"
+            lang="{{ locale.iso_code }}"
+          >
+            {%- if locale.iso_code == 'ar' -%}عربي{%- else -%}EN{%- endif -%}
+          </a>
+        {%- endif -%}
+        {%- unless forloop.last -%}
+          <span class="lang-divider" aria-hidden="true">/</span>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%} Logo — center {%- endcomment -%}
+    <a class="header-logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      {%- if settings.logo != blank -%}
+        {{
+          settings.logo
+          | image_url: width: 280
+          | image_tag:
+            alt: shop.name,
+            loading: 'eager',
+            width: 140,
+            height: 44,
+            class: 'header-logo__img'
+        }}
+      {%- else -%}
+        <img
+          src="{{ 'dahlia-logo.svg' | asset_url }}"
+          alt="{{ shop.name }}"
+          width="140"
+          height="44"
+          loading="eager"
+          class="header-logo__img"
+        >
+      {%- endif -%}
+    </a>
+
+    {%- comment -%} Actions — inline-end {%- endcomment -%}
+    <div class="header-actions">
+
+      {%- if section.settings.whatsapp_number != blank -%}
+        <a
+          class="header-icon"
+          href="https://wa.me/{{ section.settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-' }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="{{ 'header.whatsapp' | t }}"
+        >
+          {%- render 'icon-whatsapp' -%}
+        </a>
+      {%- endif -%}
+
+      <a
+        class="header-icon header-cart"
+        href="{{ routes.cart_url }}"
+        aria-label="{{ 'header.cart' | t: count: cart.item_count }}"
+      >
+        {%- render 'icon-cart' -%}
+        {%- if cart.item_count > 0 -%}
+          <span class="cart-count" aria-hidden="true">{{ cart.item_count }}</span>
+        {%- endif -%}
+      </a>
+
+      <button
+        class="header-hamburger"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+        aria-label="{{ 'header.menu_open' | t }}"
+        data-label-open="{{ 'header.menu_open' | t }}"
+        data-label-close="{{ 'header.menu_close' | t }}"
+      >
+        <span class="hamburger-icon">{%- render 'icon-hamburger' -%}</span>
+        <span class="close-icon">{%- render 'icon-close' -%}</span>
+      </button>
+
+    </div>
+  </div>
+
+  {%- comment -%} Mobile navigation drawer {%- endcomment -%}
+  <nav
+    class="mobile-nav"
+    id="mobile-nav"
+    aria-hidden="true"
+    aria-label="{{ 'header.navigation' | t }}"
+  >
+    {%- if section.settings.menu != blank -%}
+      <ul class="mobile-nav__list">
+        {%- for link in linklists[section.settings.menu].links -%}
+          <li class="mobile-nav__item">
+            <a
+              class="mobile-nav__link{% if link.active %} is-active{% endif %}"
+              href="{{ link.url }}"
+              {% if link.active %}aria-current="page"{% endif %}
+            >
+              {{ link.title }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    <div class="mobile-nav__lang">
+      {%- for locale in shop.published_locales -%}
+        <a
+          href="{{ locale.root_url }}"
+          hreflang="{{ locale.iso_code }}"
+          lang="{{ locale.iso_code }}"
+          class="mobile-nav__lang-item{% if locale.iso_code == request.locale.iso_code %} is-active{% endif %}"
+          {% if locale.iso_code == request.locale.iso_code %}aria-current="true"{% endif %}
+        >
+          {%- if locale.iso_code == 'ar' -%}عربي{%- else -%}EN{%- endif -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "WhatsApp number",
+      "info": "Include country code, e.g. +966501234567",
+      "placeholder": "+966501234567"
+    }
+  ]
+}
+{% endschema %}

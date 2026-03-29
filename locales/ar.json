@@ -8,6 +8,26 @@
       "symbol": "ر.س"
     }
   },
+  "header": {
+    "language": "اللغة",
+    "navigation": "القائمة الرئيسية",
+    "whatsapp": "تواصل عبر واتساب",
+    "cart": "السلة ({{ count }} منتج)",
+    "menu_open": "فتح القائمة",
+    "menu_close": "إغلاق القائمة"
+  },
+  "footer": {
+    "tagline": "أناقة بلا حدود",
+    "navigation": "روابط الفوتر",
+    "payment_methods": "طرق الدفع المقبولة",
+    "links": {
+      "how_to_use": "طريقة الاستخدام",
+      "faq": "الأسئلة الشائعة",
+      "contact": "اتصل بنا",
+      "returns": "سياسة الإرجاع"
+    },
+    "copyright": "© {{ year }} {{ shop_name }}. جميع الحقوق محفوظة."
+  },
   "cart": {
     "title": "سلة التسوق",
     "empty": "سلتك فارغة",

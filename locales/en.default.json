@@ -8,6 +8,26 @@
       "symbol": "ر.س"
     }
   },
+  "header": {
+    "language": "Language",
+    "navigation": "Main navigation",
+    "whatsapp": "Chat on WhatsApp",
+    "cart": "Cart ({{ count }} items)",
+    "menu_open": "Open menu",
+    "menu_close": "Close menu"
+  },
+  "footer": {
+    "tagline": "Style, elevated.",
+    "navigation": "Footer navigation",
+    "payment_methods": "Accepted payment methods",
+    "links": {
+      "how_to_use": "How to Use",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "returns": "Returns Policy"
+    },
+    "copyright": "© {{ year }} {{ shop_name }}. All rights reserved."
+  },
   "cart": {
     "title": "Your Cart",
     "empty": "Your cart is empty",

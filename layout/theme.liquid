@@ -32,7 +32,7 @@
       rel="stylesheet"
     >
 
-    <!-- CSS Variables -->
+    <!-- CSS custom properties (design tokens) -->
     <style>
       :root {
         --color-bg: {{ settings.color_bg }};
@@ -41,9 +41,9 @@
         --color-gold: {{ settings.color_gold }};
         --color-muted: {{ settings.color_muted }};
 
-        --font-heading: 'Cormorant Garamond', serif;
-        --font-body: 'Jost', sans-serif;
-        --font-arabic: 'Tajawal', sans-serif;
+        --font-heading: 'Cormorant Garamond', Georgia, serif;
+        --font-body: 'Jost', Arial, sans-serif;
+        --font-arabic: 'Tajawal', Arial, sans-serif;
       }
 
       *,
@@ -103,6 +103,8 @@
     {{ content_for_header }}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'header.css' | asset_url | stylesheet_tag }}
+    {{ 'footer.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body>
@@ -110,12 +112,15 @@
       {{ 'accessibility.skip_to_content' | t }}
     </a>
 
+    {% section 'header' %}
+
     <main id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
+    {% section 'footer' %}
+
     <script>
-      // Expose currency config globally
       window.Shopify = window.Shopify || {};
       window.Shopify.currency = {
         active: {{ cart.currency.iso_code | json }},
@@ -125,8 +130,12 @@
         locale: {{ request.locale.iso_code | json }},
         rtl: {{ request.locale.iso_code | json }} === 'ar',
         moneyFormat: {{ shop.money_format | json }},
-        moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }}
+        moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
+        currencySymbol: {{ settings.currency_symbol | json }},
+        currencySymbolPosition: {{ settings.currency_symbol_position | json }}
       };
     </script>
+
+    {{ 'header.js' | asset_url | script_tag }}
   </body>
 </html>

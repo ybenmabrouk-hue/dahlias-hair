@@ -8,42 +8,57 @@
     "theme_support_url": ""
   },
   {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image",
+        "info": "Falls back to the SVG wordmark (dahlia-logo.svg) if left empty"
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "label": "Logo width (px)",
+        "min": 80,
+        "max": 240,
+        "step": 4,
+        "default": 140
+      }
+    ]
+  },
+  {
     "name": "Colors",
     "settings": [
       {
         "type": "color",
         "id": "color_bg",
         "label": "Background",
-        "default": "#F5EEE6",
-        "info": "Main background color of the store"
+        "default": "#F5EEE6"
       },
       {
         "type": "color",
         "id": "color_primary",
         "label": "Primary",
-        "default": "#6B1228",
-        "info": "Primary brand color used for headings and accents"
+        "default": "#6B1228"
       },
       {
         "type": "color",
         "id": "color_white",
         "label": "Off-white",
-        "default": "#FAF6F0",
-        "info": "Light surface color"
+        "default": "#FAF6F0"
       },
       {
         "type": "color",
         "id": "color_gold",
-        "label": "Gold",
-        "default": "#F0DADA",
-        "info": "Gold accent color"
+        "label": "Gold / Muted",
+        "default": "#F0DADA"
       },
       {
         "type": "color",
         "id": "color_muted",
-        "label": "Muted",
-        "default": "#F0DADA",
-        "info": "Muted / subdued text and border color"
+        "label": "Muted text",
+        "default": "#F0DADA"
       }
     ]
   },
@@ -79,15 +94,13 @@
         "type": "text",
         "id": "currency_code",
         "label": "Currency code",
-        "default": "SAR",
-        "info": "ISO 4217 currency code (e.g. SAR)"
+        "default": "SAR"
       },
       {
         "type": "text",
         "id": "currency_symbol",
         "label": "Currency symbol",
-        "default": "ر.س",
-        "info": "Symbol displayed next to prices"
+        "default": "ر.س"
       },
       {
         "type": "select",
@@ -97,8 +110,7 @@
           { "value": "before", "label": "Before amount" },
           { "value": "after", "label": "After amount" }
         ],
-        "default": "after",
-        "info": "For SAR the symbol is typically placed after the amount"
+        "default": "after"
       }
     ]
   },

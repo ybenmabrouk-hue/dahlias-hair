@@ -1,0 +1,95 @@
+{% comment %}
+  Global site footer
+  Background: --color-primary (#6B1228) | Text: --color-white | Links: --color-gold
+  RTL activates automatically via <html dir="">
+{% endcomment %}
+
+{%- assign current_year = 'now' | date: '%Y' -%}
+
+<footer
+  class="site-footer"
+  data-section-id="{{ section.id }}"
+  data-section-type="footer"
+>
+  <div class="footer-inner">
+
+    {%- comment -%} Tagline {%- endcomment -%}
+    <p class="footer-tagline">{{ 'footer.tagline' | t }}</p>
+
+    {%- comment -%} Navigation links {%- endcomment -%}
+    <nav class="footer-links" aria-label="{{ 'footer.navigation' | t }}">
+      {%- if section.settings.menu != blank -%}
+        {%- for link in linklists[section.settings.menu].links -%}
+          <a class="footer-link" href="{{ link.url }}">{{ link.title }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a class="footer-link" href="/pages/how-to-use">{{ 'footer.links.how_to_use' | t }}</a>
+        <a class="footer-link" href="/pages/faq">{{ 'footer.links.faq' | t }}</a>
+        <a class="footer-link" href="/pages/contact">{{ 'footer.links.contact' | t }}</a>
+        <a class="footer-link" href="/pages/returns-policy">{{ 'footer.links.returns' | t }}</a>
+      {%- endif -%}
+    </nav>
+
+    {%- comment -%} Payment method icons {%- endcomment -%}
+    <div class="footer-payments" role="list" aria-label="{{ 'footer.payment_methods' | t }}">
+      {%- render 'payment-icons' -%}
+    </div>
+
+    {%- comment -%} Social icons {%- endcomment -%}
+    <div class="footer-social">
+      {%- if section.settings.instagram_url != blank -%}
+        <a
+          class="footer-social-link"
+          href="{{ section.settings.instagram_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          {%- render 'icon-instagram' -%}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.tiktok_url != blank -%}
+        <a
+          class="footer-social-link"
+          href="{{ section.settings.tiktok_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+        >
+          {%- render 'icon-tiktok' -%}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Copyright {%- endcomment -%}
+    <p class="footer-copyright">
+      {{ 'footer.copyright' | t: year: current_year, shop_name: shop.name }}
+    </p>
+
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Footer menu",
+      "info": "Leave empty to show default locale links (How to Use, FAQ, Contact, Returns Policy)",
+      "default": "footer"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_url",
+      "label": "TikTok URL"
+    }
+  ]
+}
+{% endschema %}

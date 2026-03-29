@@ -1,0 +1,214 @@
+/* ============================================================
+   Site Header — sticky, minimal
+   RTL/LTR handled via CSS logical properties + <html dir="">
+   ============================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gold);
+}
+
+/* Three-column grid: [lang] [logo] [actions]
+   In RTL (dir="rtl") the grid auto-mirrors: [actions] [logo] [lang] */
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-inline: 1.5rem;
+  height: 64px;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+/* ---- Language toggle ---- */
+.header-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  justify-self: start;
+}
+
+.lang-item {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  line-height: 1;
+}
+
+.lang-item--active,
+.lang-item:hover {
+  color: var(--color-primary);
+}
+
+.lang-divider {
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ---- Logo ---- */
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.header-logo__img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* ---- Actions ---- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-self: end;
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  position: relative;
+  transition: opacity 0.2s ease;
+  line-height: 0;
+}
+
+.header-icon:hover {
+  opacity: 0.65;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  inset-inline-end: -6px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.625rem;
+  font-weight: 500;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 3px;
+  line-height: 1;
+}
+
+/* ---- Hamburger button (mobile only) ---- */
+.header-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+  padding: 0;
+  line-height: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-hamburger .close-icon {
+  display: none;
+}
+
+.header-hamburger[aria-expanded="true"] .hamburger-icon {
+  display: none;
+}
+
+.header-hamburger[aria-expanded="true"] .close-icon {
+  display: flex;
+}
+
+/* ---- Mobile navigation drawer ---- */
+.mobile-nav {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.32s ease;
+  border-top: 1px solid var(--color-gold);
+  background-color: var(--color-white);
+}
+
+.mobile-nav.is-open {
+  max-height: 520px;
+}
+
+.mobile-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav__item {
+  border-bottom: 1px solid var(--color-gold);
+}
+
+.mobile-nav__link {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.mobile-nav__link:hover,
+.mobile-nav__link.is-active {
+  background-color: var(--color-bg);
+}
+
+.mobile-nav__lang {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-gold);
+}
+
+.mobile-nav__lang-item {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav__lang-item.is-active,
+.mobile-nav__lang-item:hover {
+  color: var(--color-primary);
+}
+
+/* ---- Mobile breakpoint ---- */
+@media (max-width: 767px) {
+  .header-hamburger {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  /* Desktop lang hidden on mobile — shown inside drawer */
+  .header-lang {
+    display: none;
+  }
+
+  .header-inner {
+    height: 56px;
+  }
+}
