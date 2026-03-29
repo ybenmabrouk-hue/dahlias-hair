@@ -1,0 +1,66 @@
+/* ============================================================
+   Section 3b — Trust Bar
+   Slim bar immediately below the hero
+   ============================================================ */
+
+.trust-bar {
+  background-color: var(--color-primary);
+  padding-block: 0.75rem;
+  padding-inline: 1.5rem;
+}
+
+.trust-bar__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.trust-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.trust-bar__icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.trust-bar__text {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--color-white);
+  white-space: nowrap;
+}
+
+[lang="ar"] .trust-bar__text {
+  font-family: var(--font-arabic);
+  white-space: normal;
+}
+
+.trust-bar__sep {
+  color: var(--color-gold);
+  font-size: 0.625rem;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+@media (max-width: 599px) {
+  .trust-bar__list {
+    flex-direction: column;
+    gap: 0.625rem;
+    text-align: center;
+  }
+
+  .trust-bar__sep {
+    display: none;
+  }
+}

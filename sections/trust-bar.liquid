@@ -1,0 +1,55 @@
+{% comment %}
+  Section 3b — Trust Bar
+  Slim bar directly below hero. Background #6B1228.
+  Three items separated by ✦ in #F0DADA.
+  All text from locale files.
+{% endcomment %}
+
+<div
+  class="trust-bar"
+  data-section-id="{{ section.id }}"
+  data-section-type="trust-bar"
+  role="complementary"
+  aria-label="{{ 'sections.trust_bar.shipping' | t }}"
+>
+  <ul class="trust-bar__list">
+
+    <li class="trust-bar__item">
+      <span class="trust-bar__icon" aria-hidden="true">
+        {%- render 'icon-shipping' -%}
+      </span>
+      <span class="trust-bar__text">{{ 'sections.trust_bar.shipping' | t }}</span>
+    </li>
+
+    <li class="trust-bar__sep" aria-hidden="true">✦</li>
+
+    <li class="trust-bar__item">
+      <span class="trust-bar__icon" aria-hidden="true">
+        {%- render 'icon-installments' -%}
+      </span>
+      <span class="trust-bar__text">{{ 'sections.trust_bar.tamara' | t }}</span>
+    </li>
+
+    <li class="trust-bar__sep" aria-hidden="true">✦</li>
+
+    <li class="trust-bar__item">
+      <span class="trust-bar__icon" aria-hidden="true">
+        {%- render 'icon-returns' -%}
+      </span>
+      <span class="trust-bar__text">{{ 'sections.trust_bar.returns' | t }}</span>
+    </li>
+
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Trust Bar",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Trust Bar"
+    }
+  ]
+}
+{% endschema %}
