@@ -1,0 +1,127 @@
+{% comment %}
+  Section 3d — Feature Highlights
+  4 scroll-driven stops, alternating image left/text right.
+  Background alternates #F5EEE6 and #FAF6F0.
+{% endcomment %}
+
+{%- assign features = '1,2,3,4' | split: ',' -%}
+{%- assign bg_colors = 'var(--color-bg),var(--color-white),var(--color-bg),var(--color-white)' | split: ',' -%}
+
+<div
+  class="features"
+  data-section-id="{{ section.id }}"
+  data-section-type="feature-highlights"
+>
+  <p class="features__section-eyebrow">{{ 'sections.features.eyebrow' | t }}</p>
+
+  {%- for i in features -%}
+    {%- assign idx = forloop.index -%}
+    {%- assign alt_class = '' -%}
+    {%- if forloop.index0 == 1 or forloop.index0 == 3 -%}
+      {%- assign alt_class = ' features__stop--alt' -%}
+    {%- endif -%}
+
+    <div
+      class="features__stop{{ alt_class }}"
+      style="--stop-bg: {{ bg_colors[forloop.index0] }};"
+      data-feature="{{ idx }}"
+    >
+      <div class="features__stop-inner">
+
+        {%- comment -%} Image side {%- endcomment -%}
+        <div class="features__media">
+          {%- assign img_setting = 'feature_' | append: idx | append: '_image' -%}
+          {%- if section.settings[img_setting] != blank -%}
+            {{
+              section.settings[img_setting]
+              | image_url: width: 900
+              | image_tag:
+                loading: 'lazy',
+                class: 'features__image',
+                sizes: '(min-width: 1024px) 50vw, 100vw',
+                widths: '600, 900, 1200'
+            }}
+          {%- else -%}
+            <div class="features__image-placeholder">
+              <span>{{ 'sections.features.feature_' | append: idx | append: '_title' | t }}</span>
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} Text side {%- endcomment -%}
+        <div class="features__text">
+          <p class="features__eyebrow">
+            {{ 'sections.features.feature_' | append: idx | append: '_eyebrow' | t }}
+          </p>
+          <h2 class="features__title">
+            {{ 'sections.features.feature_' | append: idx | append: '_title' | t }}
+          </h2>
+          <p class="features__description">
+            {{ 'sections.features.feature_' | append: idx | append: '_description' | t }}
+          </p>
+          {%- assign cta_url_key = 'feature_' | append: idx | append: '_cta_url' -%}
+          {%- if section.settings[cta_url_key] != blank -%}
+            <a class="features__cta btn btn--secondary" href="{{ section.settings[cta_url_key] }}">
+              {{ 'sections.hero.cta_secondary' | t }}
+            </a>
+          {%- endif -%}
+        </div>
+
+      </div>
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Feature Highlights",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "feature_1_image",
+      "label": "Feature 1 image — 5-in-1 Styling Modes"
+    },
+    {
+      "type": "url",
+      "id": "feature_1_cta_url",
+      "label": "Feature 1 CTA URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_2_image",
+      "label": "Feature 2 image — Ionic Frizz-Control"
+    },
+    {
+      "type": "url",
+      "id": "feature_2_cta_url",
+      "label": "Feature 2 CTA URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_3_image",
+      "label": "Feature 3 image — Travel-Ready"
+    },
+    {
+      "type": "url",
+      "id": "feature_3_cta_url",
+      "label": "Feature 3 CTA URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_4_image",
+      "label": "Feature 4 image — Vanity Case"
+    },
+    {
+      "type": "url",
+      "id": "feature_4_cta_url",
+      "label": "Feature 4 CTA URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature Highlights"
+    }
+  ]
+}
+{% endschema %}

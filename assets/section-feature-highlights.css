@@ -1,0 +1,201 @@
+/* ============================================================
+   Section 3d — Feature Highlights
+   4 alternating image/text stops with scroll reveal
+   ============================================================ */
+
+.features {
+  overflow: hidden;
+}
+
+/* Section-level eyebrow */
+.features__section-eyebrow {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  padding-block: 3rem 0;
+  background-color: var(--color-bg);
+}
+
+[lang="ar"] .features__section-eyebrow {
+  font-family: var(--font-arabic);
+  letter-spacing: 0.1em;
+}
+
+/* ---- Stop (one feature block) ---- */
+.features__stop {
+  background-color: var(--stop-bg, var(--color-bg));
+  padding-block: 5rem;
+
+  /* Scroll reveal — initial state */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.features__stop.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.features__stop-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 4rem;
+  gap: 5rem;
+}
+
+/* Odd stops: image left, text right (default)
+   Even stops (.features__stop--alt): image right, text left */
+.features__stop--alt .features__stop-inner {
+  direction: rtl; /* flips grid columns */
+}
+
+.features__stop--alt .features__stop-inner > * {
+  direction: ltr; /* restore text direction inside */
+}
+
+/* RTL language: flip alt logic so image/text alternate correctly */
+[dir="rtl"] .features__stop:not(.features__stop--alt) .features__stop-inner {
+  direction: rtl;
+}
+[dir="rtl"] .features__stop--alt .features__stop-inner {
+  direction: ltr;
+}
+[dir="rtl"] .features__stop-inner > * {
+  direction: rtl;
+}
+
+/* ---- Media ---- */
+.features__media {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.features__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.features__image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-gold);
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features__image-placeholder span {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #2A2018;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ---- Text ---- */
+.features__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.features__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+[lang="ar"] .features__eyebrow {
+  font-family: var(--font-arabic);
+  letter-spacing: 0.1em;
+}
+
+.features__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: #2A2018;
+}
+
+[lang="ar"] .features__title {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+.features__description {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #2A2018;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+[lang="ar"] .features__description {
+  font-family: var(--font-arabic);
+  max-width: 48ch;
+}
+
+.features__cta {
+  align-self: flex-start;
+  margin-block-start: 0.5rem;
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 1023px) {
+  .features__stop-inner {
+    padding-inline: 2rem;
+    gap: 3rem;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 767px) {
+  .features__stop {
+    padding-block: 3rem;
+  }
+
+  .features__stop-inner {
+    grid-template-columns: 1fr;
+    padding-inline: 1.25rem;
+    gap: 1.75rem;
+    direction: ltr !important;
+  }
+
+  [dir="rtl"] .features__stop-inner {
+    direction: rtl !important;
+  }
+
+  .features__stop-inner > * {
+    direction: inherit !important;
+  }
+
+  .features__media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .features__text {
+    gap: 0.75rem;
+  }
+
+  .features__cta {
+    align-self: stretch;
+    text-align: center;
+  }
+}
