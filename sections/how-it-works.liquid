@@ -1,0 +1,99 @@
+{% comment %}
+  Section 3f — How It Works
+  Background #F5EEE6. 3 steps horizontal desktop, vertical mobile.
+{% endcomment %}
+
+<section
+  class="hiw"
+  data-section-id="{{ section.id }}"
+  data-section-type="how-it-works"
+>
+  <div class="hiw__inner">
+
+    <div class="hiw__header">
+      <p class="hiw__eyebrow">{{ 'sections.how_it_works.eyebrow' | t }}</p>
+      <h2 class="hiw__headline">{{ 'sections.how_it_works.headline' | t }}</h2>
+    </div>
+
+    <ol class="hiw__steps">
+
+      {%- for step_num in (1..3) -%}
+        {%- assign img_key = 'step_' | append: step_num | append: '_image' -%}
+        <li class="hiw__step" data-step="{{ step_num }}">
+
+          <div class="hiw__step-image-wrap">
+            {%- if section.settings[img_key] != blank -%}
+              {{
+                section.settings[img_key]
+                | image_url: width: 600
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'hiw__step-image',
+                  widths: '400, 600'
+              }}
+            {%- else -%}
+              <div class="hiw__step-placeholder">
+                <span class="hiw__step-number" aria-hidden="true">
+                  {{ 'sections.how_it_works.step_' | append: step_num | append: '_number' | t }}
+                </span>
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="hiw__step-body">
+            <span class="hiw__step-number" aria-hidden="true">
+              {{ 'sections.how_it_works.step_' | append: step_num | append: '_number' | t }}
+            </span>
+            <h3 class="hiw__step-title">
+              {{ 'sections.how_it_works.step_' | append: step_num | append: '_title' | t }}
+            </h3>
+            <p class="hiw__step-desc">
+              {{ 'sections.how_it_works.step_' | append: step_num | append: '_description' | t }}
+            </p>
+          </div>
+
+          {%- unless forloop.last -%}
+            <span class="hiw__connector" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          {%- endunless -%}
+
+        </li>
+      {%- endfor -%}
+
+    </ol>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "step_1_image",
+      "label": "Step 1 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_2_image",
+      "label": "Step 2 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_3_image",
+      "label": "Step 3 image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works"
+    }
+  ]
+}
+{% endschema %}

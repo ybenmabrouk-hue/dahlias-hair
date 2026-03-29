@@ -1,0 +1,202 @@
+/* ============================================================
+   Section 3f — How It Works
+   3 steps horizontal desktop, vertical mobile
+   ============================================================ */
+
+.hiw {
+  background-color: var(--color-bg);
+  padding-block: 5rem;
+}
+
+.hiw__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ---- Header ---- */
+.hiw__header {
+  text-align: center;
+  margin-block-end: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.hiw__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+[lang="ar"] .hiw__eyebrow {
+  font-family: var(--font-arabic);
+  letter-spacing: 0.1em;
+}
+
+.hiw__headline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: #2A2018;
+  line-height: 1.2;
+}
+
+[lang="ar"] .hiw__headline {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+/* ---- Steps list ---- */
+.hiw__steps {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+}
+
+/* ---- Individual step ---- */
+.hiw__step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  position: relative;
+}
+
+/* Connector arrow between steps */
+.hiw__connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  padding-block-start: 5rem; /* align with image center approx */
+  flex-shrink: 0;
+  padding-inline: 0.5rem;
+}
+
+[dir="rtl"] .hiw__connector svg {
+  transform: scaleX(-1);
+}
+
+/* ---- Step image ---- */
+.hiw__step-image-wrap {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 3 / 4;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hiw__step-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hiw__step-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-gold);
+  opacity: 0.45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiw__step-placeholder .hiw__step-number {
+  font-size: 3rem;
+  opacity: 1;
+  color: var(--color-primary);
+}
+
+/* ---- Step body ---- */
+.hiw__step-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-inline: 1rem;
+}
+
+.hiw__step-number {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.hiw__step-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #2A2018;
+  line-height: 1.3;
+}
+
+[lang="ar"] .hiw__step-title {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+.hiw__step-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #2A2018;
+  line-height: 1.65;
+  max-width: 26ch;
+}
+
+[lang="ar"] .hiw__step-desc {
+  font-family: var(--font-arabic);
+  max-width: 30ch;
+}
+
+/* ---- Mobile: vertical layout ---- */
+@media (max-width: 767px) {
+  .hiw {
+    padding-block: 3.5rem;
+  }
+
+  .hiw__steps {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .hiw__connector {
+    display: none;
+  }
+
+  .hiw__step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: start;
+    gap: 1.25rem;
+  }
+
+  .hiw__step-image-wrap {
+    width: 90px;
+    max-width: 90px;
+    min-width: 90px;
+    aspect-ratio: 3 / 4;
+    flex-shrink: 0;
+  }
+
+  .hiw__step-body {
+    align-items: flex-start;
+    padding-inline: 0;
+  }
+
+  .hiw__step-desc {
+    max-width: none;
+  }
+}
