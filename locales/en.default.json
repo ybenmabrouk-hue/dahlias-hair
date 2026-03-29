@@ -28,6 +28,104 @@
     },
     "copyright": "© {{ year }} {{ shop_name }}. All rights reserved."
   },
+  "sections": {
+    "hero": {
+      "eyebrow": "KSA EXCLUSIVE",
+      "headline": "The Styler That Does It All",
+      "subheadline": "5-in-1 · Ionic · Travel-ready",
+      "cta_primary": "اطلبي الآن · Shop Now",
+      "cta_secondary": "See how it works",
+      "scroll_down": "Scroll"
+    },
+    "trust_bar": {
+      "shipping": "Free shipping over 200 ر.س",
+      "tamara": "Tamara · 4 interest-free payments",
+      "returns": "30-day returns"
+    },
+    "problem_solution": {
+      "eyebrow": "THE DIFFERENCE",
+      "before_headline": "The old way",
+      "after_headline": "The Dahlia way",
+      "before_bullet_1": "Multiple tools cluttering your space",
+      "before_bullet_2": "Hours wasted on styling",
+      "before_bullet_3": "Heat damage and frizz",
+      "after_bullet_1": "One device for every style",
+      "after_bullet_2": "Salon results in minutes",
+      "after_bullet_3": "Ionic care for healthy hair"
+    },
+    "features": {
+      "eyebrow": "WHY DAHLIA",
+      "feature_1_eyebrow": "VERSATILITY",
+      "feature_1_title": "5-in-1 Styling Modes",
+      "feature_1_description": "Straighten, curl, wave, volumise, and smooth — one tool replaces five.",
+      "feature_2_eyebrow": "TECHNOLOGY",
+      "feature_2_title": "Ionic Frizz-Control",
+      "feature_2_description": "Negative ions seal the cuticle for glass-smooth results and significantly less heat damage.",
+      "feature_3_eyebrow": "LIFESTYLE",
+      "feature_3_title": "Travel-Ready Design",
+      "feature_3_description": "Dual voltage, compact size, and worldwide compatibility. Style anywhere you go.",
+      "feature_4_eyebrow": "LUXURY",
+      "feature_4_title": "Luxury Vanity Case Included",
+      "feature_4_description": "Presented in a signature quilted case — gift-ready straight from the box."
+    },
+    "bundle": {
+      "eyebrow": "CHOOSE YOUR KIT",
+      "card_1_name": "The Styler",
+      "card_1_includes": "Dahlia Pro Styler",
+      "card_1_price": "799",
+      "card_1_cta": "Add to Cart",
+      "card_2_name": "The Full Kit",
+      "card_2_badge": "✦ Best Value",
+      "card_2_includes": "Styler + Vanity Case + Heat Mat + Travel Pouch",
+      "card_2_price": "999",
+      "card_2_original_price": "1,150",
+      "card_2_tamara": "or 4 × 250 ر.س with Tamara",
+      "card_2_cta": "Add to Cart"
+    },
+    "how_it_works": {
+      "eyebrow": "HOW IT WORKS",
+      "headline": "Three steps to perfect hair",
+      "step_1_number": "01",
+      "step_1_title": "Section your hair",
+      "step_1_description": "Divide your hair into manageable sections for the smoothest, most even results.",
+      "step_2_number": "02",
+      "step_2_title": "Glide through each section",
+      "step_2_description": "Run the Dahlia Styler smoothly from root to tip in one fluid motion.",
+      "step_3_number": "03",
+      "step_3_title": "Style complete in minutes",
+      "step_3_description": "Enjoy salon-quality results from the comfort of your own home."
+    },
+    "social_proof": {
+      "headline": "Loved by thousands",
+      "rating": "4.9",
+      "rating_label": "out of 5",
+      "review_count": "2,400+ reviews",
+      "trustpilot_label": "Excellent on Trustpilot",
+      "ugc_label": "Real results from real customers",
+      "ticker": "\"Best purchase I've made all year\" ✦ \"My hair has never looked this good\" ✦ \"Saves me 40 minutes every morning\" ✦ \"Worth every riyal\" ✦ \"The only styler I'll ever need\" ✦ \"أفضل شراء قمت به هذا العام\" ✦ \"شعري لم يبدُ بهذه الروعة من قبل\" ✦ \"توفر عليّ ٤٠ دقيقة كل صباح\" ✦ \"يستحق كل ريال\" ✦ \"الجهاز الوحيد الذي أحتاجه\""
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "headline": "Common questions",
+      "q1": "Do you ship across Saudi Arabia?",
+      "a1": "Yes — we offer free standard shipping on all orders above 200 ر.س across the Kingdom, with express options available at checkout.",
+      "q2": "What is your return policy?",
+      "a2": "We accept returns within 30 days of delivery. The product must be in its original condition and packaging. Contact our support team to initiate a return.",
+      "q3": "Am I eligible for Tamara installments?",
+      "a3": "Yes. Tamara is available at checkout for eligible orders. Split your total into 4 interest-free instalments — no hidden fees.",
+      "q4": "Which hair types does the styler work on?",
+      "a4": "The Dahlia Styler works on all hair types — fine, thick, curly, straight, and colour-treated hair. Adjustable heat settings let you tailor the temperature to your exact hair type.",
+      "q5": "What is included in the Vanity Case?",
+      "a5": "The Full Kit includes the Dahlia Pro Styler, a signature quilted vanity case, a heat-resistant mat, and a compact travel pouch.",
+      "q6": "What warranty is included?",
+      "a6": "All Dahlia products come with a 1-year manufacturer warranty covering defects in materials and workmanship. Extended warranty options are available at checkout."
+    },
+    "sticky_cart": {
+      "product_name": "Dahlia Pro Styler",
+      "add_to_cart": "Add to Cart",
+      "tamara_note": "Pay in 4 with Tamara"
+    }
+  },
   "cart": {
     "title": "Your Cart",
     "empty": "Your cart is empty",
@@ -76,13 +174,5 @@
     "account": "Account",
     "orders": "Orders",
     "addresses": "Addresses"
-  },
-  "sections": {
-    "header": {
-      "cart": "Cart ({{ count }})"
-    },
-    "footer": {
-      "copyright": "© {{ year }} {{ shop_name }}. All rights reserved."
-    }
   }
 }

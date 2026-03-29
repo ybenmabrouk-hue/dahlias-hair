@@ -1,0 +1,164 @@
+{% comment %}
+  Section 3a — Hero
+  Full-width video (mp4) with image fallback. Background #F5EEE6.
+  RTL/LTR via <html dir="">.
+{% endcomment %}
+
+<section
+  class="hero"
+  data-section-id="{{ section.id }}"
+  data-section-type="hero"
+  style="--hero-min-height: {{ section.settings.min_height }}vh;"
+>
+  {%- comment -%} Background media {%- endcomment -%}
+  <div class="hero__media" aria-hidden="true">
+    {%- if section.settings.video_url != blank -%}
+      <video
+        class="hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        {% if section.settings.fallback_image != blank %}
+          poster="{{ section.settings.fallback_image | image_url: width: 1920 }}"
+        {% endif %}
+      >
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {%- elsif section.settings.fallback_image != blank -%}
+      {{
+        section.settings.fallback_image
+        | image_url: width: 1920
+        | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'hero__fallback-img',
+          sizes: '100vw',
+          widths: '750, 1100, 1440, 1920'
+      }}
+    {%- endif -%}
+    {%- if section.settings.show_overlay -%}
+      <div class="hero__overlay" style="--overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Content {%- endcomment -%}
+  <div class="hero__content">
+    <div class="hero__inner">
+
+      {%- comment -%} Eyebrow {%- endcomment -%}
+      <p class="hero__eyebrow">{{ 'sections.hero.eyebrow' | t }}</p>
+
+      {%- comment -%} Headline {%- endcomment -%}
+      <h1 class="hero__headline">{{ 'sections.hero.headline' | t }}</h1>
+
+      {%- comment -%} Subheadline {%- endcomment -%}
+      <p class="hero__subheadline">{{ 'sections.hero.subheadline' | t }}</p>
+
+      {%- comment -%} CTAs {%- endcomment -%}
+      <div class="hero__ctas">
+        <a
+          class="btn btn--primary"
+          href="{{ section.settings.cta_primary_url | default: routes.root_url }}"
+        >
+          {{ 'sections.hero.cta_primary' | t }}
+        </a>
+        {%- if section.settings.cta_secondary_url != blank -%}
+          <a
+            class="btn btn--secondary"
+            href="{{ section.settings.cta_secondary_url }}"
+          >
+            {{ 'sections.hero.cta_secondary' | t }}
+          </a>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+
+  {%- comment -%} Scroll-down arrow {%- endcomment -%}
+  <button
+    class="hero__scroll-arrow"
+    aria-label="{{ 'sections.hero.scroll_down' | t }}"
+    onclick="window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </button>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL (.mp4)",
+      "info": "Paste a full URL to an .mp4 file hosted in Files or externally"
+    },
+    {
+      "type": "image_picker",
+      "id": "fallback_image",
+      "label": "Fallback image",
+      "info": "Shown when video is unavailable or on slow connections"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show overlay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "default": 20,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "label": "Minimum height",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "default": 100,
+      "unit": "vh"
+    },
+    {
+      "type": "header",
+      "content": "CTAs"
+    },
+    {
+      "type": "url",
+      "id": "cta_primary_url",
+      "label": "Primary CTA URL",
+      "default": "/"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_url",
+      "label": "Secondary CTA URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

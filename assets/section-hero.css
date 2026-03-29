@@ -1,0 +1,202 @@
+/* ============================================================
+   Section 3a — Hero
+   Full-width video / image hero with centered content
+   ============================================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: var(--hero-min-height, 100vh);
+  min-height: var(--hero-min-height, 100svh);
+  background-color: var(--color-bg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Background media ---- */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__video,
+.hero__fallback-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, var(--overlay-opacity, 0.2));
+}
+
+/* ---- Content ---- */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1.5rem;
+  padding-block: 6rem 5rem;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  max-width: 760px;
+  width: 100%;
+}
+
+/* Eyebrow */
+.hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+[lang="ar"] .hero__eyebrow {
+  font-family: var(--font-arabic);
+  letter-spacing: 0.1em;
+}
+
+/* Headline */
+.hero__headline {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: #2A2018;
+}
+
+[lang="ar"] .hero__headline {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+}
+
+/* Subheadline */
+.hero__subheadline {
+  font-family: var(--font-body);
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+
+[lang="ar"] .hero__subheadline {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}
+
+/* CTA group */
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+  justify-content: center;
+  margin-block-start: 0.5rem;
+}
+
+/* ---- Shared button primitives ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+[lang="ar"] .btn {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn--primary:hover {
+  opacity: 0.88;
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---- Scroll arrow ---- */
+.hero__scroll-arrow {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-gold);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: hero-bounce 2s ease-in-out infinite;
+}
+
+@keyframes hero-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 767px) {
+  .hero__content {
+    padding-block: 5rem 4rem;
+    padding-inline: 1.25rem;
+  }
+
+  .hero__inner {
+    gap: 1rem;
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__ctas .btn {
+    width: 100%;
+  }
+
+  .hero__scroll-arrow {
+    bottom: 1.25rem;
+  }
+}
