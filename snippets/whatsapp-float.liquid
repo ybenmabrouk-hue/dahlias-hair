@@ -1,0 +1,21 @@
+{% comment %}
+  WhatsApp floating button — fixed position, all pages
+  LTR: bottom-right  |  RTL: bottom-left  (via inset-inline-end)
+  Phone number configured in theme settings (settings.whatsapp_number).
+  Preset message in Arabic, URL-encoded.
+{% endcomment %}
+
+{%- assign _wa_num = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-' -%}
+{%- assign _wa_msg = 'مرحباً، أريد الاستفسار عن منتج داليا' | url_encode -%}
+
+{%- if _wa_num != blank -%}
+  <a
+    class="wa-float"
+    href="https://wa.me/{{ _wa_num }}?text={{ _wa_msg }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="{{ 'header.whatsapp' | t }}"
+  >
+    {%- render 'icon-whatsapp' -%}
+  </a>
+{%- endif -%}

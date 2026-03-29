@@ -1,0 +1,18 @@
+{% comment %}
+  Tamara installment line — reusable snippet
+  Usage: {% render 'tamara-installment', price: variant.price %}
+  - price: Shopify price in smallest currency unit (e.g. 79900 for 799 SAR)
+  data-tamara-template stores a sentinel string used by JS for variant-switch updates.
+{% endcomment %}
+
+{%- unless price -%}{%- assign price = 0 -%}{%- endunless -%}
+{%- assign _installment = price | divided_by: 4 | money_without_currency -%}
+{%- assign _tmpl = 'product.tamara' | t: amount: 'TAMARA_AMOUNT' -%}
+
+<p
+  class="tamara-installment"
+  data-tamara-line
+  data-tamara-template="{{ _tmpl | escape }}"
+>
+  {{- 'product.tamara' | t: amount: _installment -}}
+</p>

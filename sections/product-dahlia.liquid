@@ -5,8 +5,6 @@
 {% endcomment %}
 
 {%- assign current_variant = product.selected_or_first_available_variant -%}
-{%- assign tamara_raw = current_variant.price | divided_by: 4 -%}
-{%- assign tamara_amount = tamara_raw | money_without_currency -%}
 
 {%- assign tab_ids = 'description,whats_included,how_to_use,shipping_returns' | split: ',' -%}
 {%- assign section_id = section.id -%}
@@ -122,9 +120,7 @@
       </div>
 
       <!-- Tamara installment -->
-      <p class="pd-tamara" data-tamara-line>
-        {{ 'product.tamara' | t: amount: tamara_amount }}
-      </p>
+      {%- render 'tamara-installment', price: current_variant.price -%}
 
       <!-- Variant selector -->
       {%- unless product.has_only_default_variant -%}
@@ -220,6 +216,11 @@
       >
         {{ 'product.buy_now' | t }}
       </button>
+
+      <!-- Payment icons (below ATC, muted) -->
+      <div class="pd-payment-icons">
+        {%- render 'payment-icons', context: 'product' -%}
+      </div>
 
       <!-- Trust badges -->
       {%- render 'product-trust-badges' -%}

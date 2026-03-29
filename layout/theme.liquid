@@ -115,6 +115,8 @@
     {{ 'section-faq.css' | asset_url | stylesheet_tag }}
     {{ 'section-sticky-cart-bar.css' | asset_url | stylesheet_tag }}
     {{ 'section-product-dahlia.css' | asset_url | stylesheet_tag }}
+    {{ 'payment-features.css' | asset_url | stylesheet_tag }}
+    {{ 'whatsapp-float.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body>
@@ -129,6 +131,8 @@
     </main>
 
     {% section 'footer' %}
+
+    {%- render 'whatsapp-float' -%}
 
     <script>
       window.Shopify = window.Shopify || {};

@@ -112,9 +112,14 @@
       // Tamara
       if (tamaraLine) {
         var installment = formatMoney(Math.round(variant.price / 4));
-        var text = tamaraLine.dataset.template || tamaraLine.textContent;
-        // Simple replacement — locale string uses {{ amount }}
-        tamaraLine.textContent = tamaraLine.textContent.replace(/[\d,\.]+/, installment);
+        var tmpl = tamaraLine.dataset.tamaraTemplate;
+        if (tmpl) {
+          // Template uses sentinel TAMARA_AMOUNT set by tamara-installment snippet
+          tamaraLine.textContent = tmpl.replace('TAMARA_AMOUNT', installment);
+        } else {
+          // Fallback: replace first decimal/integer number in current text
+          tamaraLine.textContent = tamaraLine.textContent.replace(/[\d,\.]+/, installment);
+        }
       }
 
       // ATC button

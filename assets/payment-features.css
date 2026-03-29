@@ -1,0 +1,98 @@
+/* ============================================================
+   Payment features — Phase 5
+   Tamara installment line · payment icons contexts · payment note
+   ============================================================ */
+
+/* ---- Tamara installment line (shared) ---- */
+.tamara-installment {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-gold);
+  line-height: 1.4;
+}
+
+[lang="ar"] .tamara-installment {
+  font-family: var(--font-arabic);
+}
+
+/* ---- Payment icons shared wrapper ---- */
+.payment-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.payment-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.payment-icon svg {
+  display: block;
+}
+
+/* ---- Footer context: light (#FAF6F0), 24px height, 0.8 opacity ---- */
+.payment-icons--footer {
+  justify-content: center;
+}
+
+.payment-icons--footer .payment-icon svg {
+  height: 24px;
+  width: auto;
+  filter: brightness(0) invert(1);   /* → pure white */
+  opacity: 0.8;
+}
+
+/* Mastercard has a light background — invert makes it dark, so keep it white-framed */
+.payment-icons--footer .payment-icon:last-child svg {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+/* ---- Product context: dark (#2A2018), 18px height, 0.5 opacity ---- */
+.payment-icons--product {
+  justify-content: flex-start;
+}
+
+.payment-icons--product .payment-icon svg {
+  height: 18px;
+  width: auto;
+  filter: grayscale(100%) brightness(0.25);  /* → near-#2A2018 */
+  opacity: 0.5;
+}
+
+/* ---- Default (branded) context ---- */
+.payment-icons--default .payment-icon svg {
+  height: 30px;
+  width: auto;
+}
+
+/* ---- Payment note (cart reassurance) ---- */
+.payment-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-gold);
+  line-height: 1.4;
+}
+
+[lang="ar"] .payment-note {
+  font-family: var(--font-arabic);
+}
+
+.payment-note__icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}

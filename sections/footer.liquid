@@ -32,7 +32,7 @@
 
     {%- comment -%} Payment method icons {%- endcomment -%}
     <div class="footer-payments" role="list" aria-label="{{ 'footer.payment_methods' | t }}">
-      {%- render 'payment-icons' -%}
+      {%- render 'payment-icons', context: 'footer' -%}
     </div>
 
     {%- comment -%} Social icons {%- endcomment -%}

@@ -73,6 +73,7 @@
       "card_1_name": "الجهاز",
       "card_1_includes": "جهاز داليا برو",
       "card_1_price": "٧٩٩",
+      "card_1_tamara": "أو ٤ × ٢٠٠ ر.س مع تمارا",
       "card_1_cta": "أضيفي للسلة",
       "card_2_name": "الطقم الكامل",
       "card_2_badge": "✦ الأفضل قيمةً",
@@ -148,6 +149,7 @@
     },
     "gallery_thumbnail_label": "عرض الصورة {{ index }}"
   },
+  "payment_note": "نقبل مدى و STC Pay",
   "cart": {
     "title": "سلة التسوق",
     "empty": "سلتك فارغة",

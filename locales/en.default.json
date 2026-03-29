@@ -73,6 +73,7 @@
       "card_1_name": "The Styler",
       "card_1_includes": "Dahlia Pro Styler",
       "card_1_price": "799",
+      "card_1_tamara": "or 4 × 200 ر.س with Tamara",
       "card_1_cta": "Add to Cart",
       "card_2_name": "The Full Kit",
       "card_2_badge": "✦ Best Value",
@@ -148,6 +149,7 @@
     },
     "gallery_thumbnail_label": "View image {{ index }}"
   },
+  "payment_note": "We accept Mada and STC Pay",
   "cart": {
     "title": "Your Cart",
     "empty": "Your cart is empty",

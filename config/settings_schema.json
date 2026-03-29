@@ -8,6 +8,18 @@
     "theme_support_url": ""
   },
   {
+    "name": "WhatsApp",
+    "settings": [
+      {
+        "type": "text",
+        "id": "whatsapp_number",
+        "label": "WhatsApp Number",
+        "info": "Include country code, e.g. +966501234567. Leave blank to hide the floating button.",
+        "placeholder": "+966501234567"
+      }
+    ]
+  },
+  {
     "name": "Logo",
     "settings": [
       {
