@@ -1,0 +1,118 @@
+{% comment %}
+  Section 3g — Social Proof
+  Background #FAF6F0. Star rating, Trustpilot logo, UGC video row, review ticker.
+{% endcomment %}
+
+<section
+  class="social-proof"
+  data-section-id="{{ section.id }}"
+  data-section-type="social-proof"
+>
+  <div class="social-proof__inner">
+
+    {%- comment -%} Headline + rating {%- endcomment -%}
+    <div class="social-proof__header">
+      <h2 class="social-proof__headline">{{ 'sections.social_proof.headline' | t }}</h2>
+
+      <div class="social-proof__rating" aria-label="{{ 'sections.social_proof.rating' | t }} {{ 'sections.social_proof.rating_label' | t }}">
+        <div class="social-proof__stars" aria-hidden="true">
+          {%- for i in (1..5) -%}
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" fill="currentColor">
+              <path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.51.91-5.32L2.26 6.62l5.35-.78z"/>
+            </svg>
+          {%- endfor -%}
+        </div>
+        <span class="social-proof__rating-score">{{ 'sections.social_proof.rating' | t }}</span>
+        <span class="social-proof__rating-label">{{ 'sections.social_proof.rating_label' | t }}</span>
+        <span class="social-proof__rating-count">· {{ 'sections.social_proof.review_count' | t }}</span>
+      </div>
+
+      <div class="social-proof__trustpilot" aria-label="Trustpilot">
+        {%- render 'icon-trustpilot' -%}
+        <span>{{ 'sections.social_proof.trustpilot_label' | t }}</span>
+      </div>
+    </div>
+
+    {%- comment -%} UGC video/image row {%- endcomment -%}
+    <div class="social-proof__ugc" aria-label="{{ 'sections.social_proof.ugc_label' | t }}">
+      <div class="social-proof__ugc-track">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'ugc_item' -%}
+            <div class="social-proof__ugc-item" {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 360
+                  | image_tag:
+                    loading: 'lazy',
+                    class: 'social-proof__ugc-media',
+                    widths: '240, 360, 480'
+                }}
+              {%- else -%}
+                <div class="social-proof__ugc-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+                    <polygon points="5 3 19 12 5 21 5 3"/>
+                  </svg>
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        {%- else -%}
+          {%- comment -%} Default placeholders when no blocks added {%- endcomment -%}
+          {%- for i in (1..6) -%}
+            <div class="social-proof__ugc-item social-proof__ugc-item--placeholder">
+              <div class="social-proof__ugc-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- comment -%} Scrolling review ticker {%- endcomment -%}
+    <div class="social-proof__ticker" aria-label="Customer reviews" aria-live="off">
+      <div class="social-proof__ticker-track">
+        {%- comment -%} Duplicate for seamless loop {%- endcomment -%}
+        <span class="social-proof__ticker-text">{{ 'sections.social_proof.ticker' | t }}</span>
+        <span class="social-proof__ticker-text" aria-hidden="true">{{ 'sections.social_proof.ticker' | t }}</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Social Proof",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "ugc_item",
+      "name": "UGC item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "UGC photo or video thumbnail"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Proof",
+      "blocks": [
+        { "type": "ugc_item" },
+        { "type": "ugc_item" },
+        { "type": "ugc_item" },
+        { "type": "ugc_item" },
+        { "type": "ugc_item" },
+        { "type": "ugc_item" }
+      ]
+    }
+  ]
+}
+{% endschema %}
