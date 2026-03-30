@@ -1,0 +1,122 @@
+{% comment %}
+  Page: /pages/reviews
+  Hero → summary bar → review cards grid → CTA
+  RTL/LTR via <html dir="">. All text from locale files.
+{% endcomment %}
+
+{%- assign reviews = '1,2,3,4,5' | split: ',' -%}
+
+<div
+  class="pg-rev"
+  data-section-id="{{ section.id }}"
+  data-section-type="page-reviews"
+>
+
+  {%- comment -%} ── Hero ── {%- endcomment -%}
+  <div class="pg-rev__hero">
+    <div class="pg-rev__hero-inner">
+      <p class="pg-rev__eyebrow">{{ 'pages.reviews.eyebrow' | t }}</p>
+      <h1 class="pg-rev__title">{{ 'pages.reviews.title' | t }}</h1>
+    </div>
+  </div>
+
+  {%- comment -%} ── Summary bar ── {%- endcomment -%}
+  <div class="pg-rev__summary">
+    <div class="pg-rev__summary-inner">
+
+      <div class="pg-rev__summary-score">
+        <span class="pg-rev__big-rating">{{ 'sections.social_proof.rating' | t }}</span>
+        <div class="pg-rev__stars" aria-hidden="true">
+          {%- for i in (1..5) -%}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="22" height="22" fill="currentColor" aria-hidden="true">
+              <path d="M10 1l2.39 4.84 5.35.78-3.87 3.77.91 5.32L10 13.27l-4.78 2.51.91-5.32L2.26 6.62l5.35-.78z"/>
+            </svg>
+          {%- endfor -%}
+        </div>
+        <p class="pg-rev__review-count">{{ 'pages.reviews.review_count' | t }}</p>
+      </div>
+
+      {%- if settings.trustpilot_url != blank -%}
+        <a
+          class="pg-rev__trustpilot-link"
+          href="{{ settings.trustpilot_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Trustpilot"
+        >
+          {%- render 'icon-trustpilot' -%}
+          <span>{{ 'sections.social_proof.trustpilot_label' | t }}</span>
+        </a>
+      {%- endif -%}
+
+    </div>
+  </div>
+
+  {%- comment -%} ── Review cards ── {%- endcomment -%}
+  <div class="pg-rev__grid-section">
+    <div class="pg-rev__grid-inner">
+      <div class="pg-rev__grid">
+
+        {%- for n in reviews -%}
+          <article class="pg-rev__card">
+            <div class="pg-rev__card-header">
+              <div class="pg-rev__card-avatar" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="28" height="28" fill="currentColor">
+                  <circle cx="24" cy="18" r="8"/>
+                  <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
+                </svg>
+              </div>
+              <div class="pg-rev__card-meta">
+                <p class="pg-rev__card-name">{{ 'pages.reviews.review_' | append: n | append: '_name' | t }}</p>
+                <p class="pg-rev__card-date">{{ 'pages.reviews.review_' | append: n | append: '_date' | t }}</p>
+              </div>
+            </div>
+            <div class="pg-rev__card-stars" aria-label="{{ 'sections.social_proof.rating' | t }} {{ 'sections.social_proof.rating_label' | t }}">
+              {%- for i in (1..5) -%}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+                  <path d="M8 1l1.85 3.74 4.13.6-2.99 2.91.71 4.12L8 10.42l-3.7 1.95.71-4.12L2.02 5.34l4.13-.6z"/>
+                </svg>
+              {%- endfor -%}
+            </div>
+            <blockquote class="pg-rev__card-text">
+              {{ 'pages.reviews.review_' | append: n | append: '_text' | t }}
+            </blockquote>
+          </article>
+        {%- endfor -%}
+
+      </div>
+    </div>
+  </div>
+
+  {%- comment -%} ── CTA ── {%- endcomment -%}
+  <div class="pg-rev__cta-section">
+    <div class="pg-rev__cta-inner">
+      <a
+        class="btn btn--primary pg-rev__cta-btn"
+        href="{{ section.settings.cta_url | default: routes.root_url }}"
+      >
+        {{ 'pages.reviews.cta_button' | t }}
+      </a>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Reviews Page",
+  "settings": [
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA button URL",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews Page"
+    }
+  ]
+}
+{% endschema %}

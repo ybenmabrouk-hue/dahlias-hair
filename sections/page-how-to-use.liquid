@@ -1,0 +1,148 @@
+{% comment %}
+  Page: /pages/how-to-use
+  Hero → optional video embed → 5-step guide → CTA
+  RTL/LTR via <html dir="">. All text from locale files.
+{% endcomment %}
+
+<div
+  class="pg-htu"
+  data-section-id="{{ section.id }}"
+  data-section-type="page-how-to-use"
+>
+
+  {%- comment -%} ── Hero ── {%- endcomment -%}
+  <div class="pg-htu__hero">
+    <div class="pg-htu__hero-inner">
+      <p class="pg-htu__eyebrow">{{ 'pages.how_to_use.eyebrow' | t }}</p>
+      <h1 class="pg-htu__title">{{ 'pages.how_to_use.title' | t }}</h1>
+    </div>
+  </div>
+
+  {%- comment -%} ── Video embed ── {%- endcomment -%}
+  {%- if settings.how_to_use_video_url != blank -%}
+    <div class="pg-htu__video-section">
+      <div class="pg-htu__video-wrap">
+        <div class="pg-htu__video-ratio">
+          <iframe
+            src="{{ settings.how_to_use_video_url }}"
+            title="{{ 'pages.how_to_use.title' | t }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- comment -%} ── 5-step guide ── {%- endcomment -%}
+  <div class="pg-htu__steps-section">
+    <div class="pg-htu__steps-inner">
+
+      {%- for n in (1..5) -%}
+        {%- assign step_n = n | prepend: 'step_' -%}
+        {%- assign img_key = step_n | append: '_image' -%}
+        {%- assign alt_class = '' -%}
+        {%- if n == 2 or n == 4 -%}
+          {%- assign alt_class = ' pg-htu__step--alt' -%}
+        {%- endif -%}
+
+        <div class="pg-htu__step{{ alt_class }}">
+
+          <div class="pg-htu__step-media">
+            {%- if section.settings[img_key] != blank -%}
+              {{
+                section.settings[img_key]
+                | image_url: width: 640
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'pg-htu__step-img',
+                  sizes: '(min-width:768px) 50vw, 100vw',
+                  widths: '400, 640, 900'
+              }}
+            {%- else -%}
+              <div class="pg-htu__step-placeholder">
+                <span class="pg-htu__step-placeholder-num">{{ 'pages.how_to_use.step_' | append: n | append: '_number' | t }}</span>
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="pg-htu__step-body">
+            <span class="pg-htu__step-number">{{ 'pages.how_to_use.step_' | append: n | append: '_number' | t }}</span>
+            <h2 class="pg-htu__step-title">{{ 'pages.how_to_use.step_' | append: n | append: '_title' | t }}</h2>
+            <p class="pg-htu__step-desc">{{ 'pages.how_to_use.step_' | append: n | append: '_desc' | t }}</p>
+          </div>
+
+        </div>
+      {%- endfor -%}
+
+    </div>
+  </div>
+
+  {%- comment -%} ── CTA ── {%- endcomment -%}
+  <div class="pg-htu__cta-section">
+    <div class="pg-htu__cta-inner">
+      <h2 class="pg-htu__cta-heading">{{ 'pages.how_to_use.cta_heading' | t }}</h2>
+      <a
+        class="btn btn--primary pg-htu__cta-btn"
+        href="{{ section.settings.cta_url | default: routes.root_url }}"
+      >
+        {{ 'pages.how_to_use.cta_button' | t }}
+      </a>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "How to Use Page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Step images"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_1_image",
+      "label": "Step 1 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_2_image",
+      "label": "Step 2 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_3_image",
+      "label": "Step 3 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_4_image",
+      "label": "Step 4 image"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_5_image",
+      "label": "Step 5 image"
+    },
+    {
+      "type": "header",
+      "content": "CTA"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA button URL",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How to Use Page"
+    }
+  ]
+}
+{% endschema %}

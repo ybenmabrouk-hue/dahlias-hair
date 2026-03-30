@@ -1,0 +1,302 @@
+/* ============================================================
+   Page: How to Use  (/pages/how-to-use)
+   RTL handled via CSS logical properties + <html dir="">
+   ============================================================ */
+
+/* ---- Hero ---- */
+.pg-htu__hero {
+  background-color: var(--color-bg);
+  padding-block: 5rem 4rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.pg-htu__hero-inner {
+  max-width: 700px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pg-htu__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+[lang="ar"] .pg-htu__eyebrow {
+  font-family: var(--font-arabic);
+  letter-spacing: 0.1em;
+}
+
+.pg-htu__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: #2A2018;
+  line-height: 1.15;
+}
+
+[lang="ar"] .pg-htu__title {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+/* ---- Video section ---- */
+.pg-htu__video-section {
+  background-color: var(--color-white);
+  padding-block: 3rem;
+  padding-inline: 1.5rem;
+}
+
+.pg-htu__video-wrap {
+  max-width: 800px;
+  margin-inline: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(107, 18, 40, 0.1);
+}
+
+.pg-htu__video-ratio {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.pg-htu__video-ratio iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ---- Steps section ---- */
+.pg-htu__steps-section {
+  background-color: var(--color-bg);
+  padding-block: 5rem;
+}
+
+.pg-htu__steps-inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ---- Individual step ---- */
+.pg-htu__step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5rem;
+  padding-block: 4rem;
+  border-bottom: 1px solid var(--color-gold);
+}
+
+.pg-htu__step:last-child {
+  border-bottom: none;
+}
+
+/* Odd steps: image left, text right.
+   Even steps (.pg-htu__step--alt): text left, image right
+   via direction trick to avoid RTL conflicts */
+.pg-htu__step--alt {
+  direction: rtl;
+}
+
+.pg-htu__step--alt > * {
+  direction: ltr;
+}
+
+/* RTL: flip alt logic */
+[dir="rtl"] .pg-htu__step:not(.pg-htu__step--alt) {
+  direction: rtl;
+}
+[dir="rtl"] .pg-htu__step--alt {
+  direction: ltr;
+}
+[dir="rtl"] .pg-htu__step > * {
+  direction: rtl;
+}
+
+/* ---- Step media ---- */
+.pg-htu__step-media {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.pg-htu__step-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pg-htu__step-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gold);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pg-htu__step-placeholder-num {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 300;
+  color: var(--color-gold);
+}
+
+/* ---- Step body ---- */
+.pg-htu__step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.pg-htu__step-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--color-gold);
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+[lang="ar"] .pg-htu__step-number {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}
+
+.pg-htu__step-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 300;
+  color: #2A2018;
+  line-height: 1.2;
+}
+
+[lang="ar"] .pg-htu__step-title {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+.pg-htu__step-desc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #2A2018;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+[lang="ar"] .pg-htu__step-desc {
+  font-family: var(--font-arabic);
+  max-width: 48ch;
+}
+
+/* ---- CTA section ---- */
+.pg-htu__cta-section {
+  background-color: var(--color-primary);
+  padding-block: 5rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.pg-htu__cta-inner {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pg-htu__cta-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 300;
+  color: var(--color-white);
+  line-height: 1.2;
+}
+
+[lang="ar"] .pg-htu__cta-heading {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+.pg-htu__cta-btn {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+  padding-inline: 2.5rem;
+}
+
+.pg-htu__cta-btn:hover {
+  background-color: var(--color-bg);
+  border-color: var(--color-bg);
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 1023px) {
+  .pg-htu__step {
+    gap: 3rem;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 767px) {
+  .pg-htu__hero {
+    padding-block: 3.5rem 2.5rem;
+  }
+
+  .pg-htu__video-section {
+    padding-block: 2rem;
+    padding-inline: 1rem;
+  }
+
+  .pg-htu__steps-section {
+    padding-block: 3rem;
+  }
+
+  .pg-htu__step {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-block: 2.5rem;
+    direction: ltr !important;
+  }
+
+  [dir="rtl"] .pg-htu__step {
+    direction: rtl !important;
+  }
+
+  .pg-htu__step > * {
+    direction: inherit !important;
+  }
+
+  .pg-htu__step-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .pg-htu__step-number {
+    font-size: 2rem;
+  }
+
+  .pg-htu__step-desc {
+    max-width: none;
+  }
+
+  .pg-htu__cta-section {
+    padding-block: 3.5rem;
+  }
+}

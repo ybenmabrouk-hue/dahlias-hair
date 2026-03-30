@@ -1,0 +1,268 @@
+/* ============================================================
+   Page: Reviews  (/pages/reviews)
+   RTL handled via CSS logical properties + <html dir="">
+   ============================================================ */
+
+/* ---- Hero ---- */
+.pg-rev__hero {
+  background-color: var(--color-bg);
+  padding-block: 5rem 4rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.pg-rev__hero-inner {
+  max-width: 700px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pg-rev__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+[lang="ar"] .pg-rev__eyebrow {
+  font-family: var(--font-arabic);
+  letter-spacing: 0.1em;
+}
+
+.pg-rev__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: #2A2018;
+  line-height: 1.15;
+}
+
+[lang="ar"] .pg-rev__title {
+  font-family: var(--font-arabic);
+  font-weight: 400;
+}
+
+/* ---- Summary bar ---- */
+.pg-rev__summary {
+  background-color: var(--color-white);
+  padding-block: 3rem;
+  padding-inline: 1.5rem;
+  border-bottom: 1px solid var(--color-gold);
+}
+
+.pg-rev__summary-inner {
+  max-width: 700px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
+}
+
+.pg-rev__summary-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pg-rev__big-rating {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  font-weight: 300;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+[lang="ar"] .pg-rev__big-rating {
+  font-family: var(--font-arabic);
+}
+
+.pg-rev__stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--color-primary);
+}
+
+.pg-rev__review-count {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: #2A2018;
+}
+
+[lang="ar"] .pg-rev__review-count {
+  font-family: var(--font-arabic);
+}
+
+.pg-rev__trustpilot-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: #8B6A5A;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.pg-rev__trustpilot-link:hover {
+  opacity: 0.7;
+}
+
+[lang="ar"] .pg-rev__trustpilot-link {
+  font-family: var(--font-arabic);
+}
+
+/* ---- Reviews grid ---- */
+.pg-rev__grid-section {
+  background-color: var(--color-bg);
+  padding-block: 4rem 5rem;
+  padding-inline: 1.5rem;
+}
+
+.pg-rev__grid-inner {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.pg-rev__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* ---- Review card ---- */
+.pg-rev__card {
+  background-color: var(--color-white);
+  border: 1px solid #E8DDD0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.pg-rev__card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pg-rev__card-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-gold);
+}
+
+.pg-rev__card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.pg-rev__card-name {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #2A2018;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[lang="ar"] .pg-rev__card-name {
+  font-family: var(--font-arabic);
+}
+
+.pg-rev__card-date {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-gold);
+}
+
+[lang="ar"] .pg-rev__card-date {
+  font-family: var(--font-arabic);
+}
+
+.pg-rev__card-stars {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  color: var(--color-primary);
+}
+
+.pg-rev__card-text {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #2A2018;
+  line-height: 1.7;
+  font-style: normal;
+}
+
+[lang="ar"] .pg-rev__card-text {
+  font-family: var(--font-arabic);
+}
+
+/* ---- CTA ---- */
+.pg-rev__cta-section {
+  background-color: var(--color-white);
+  padding-block: 4rem;
+  padding-inline: 1.5rem;
+  border-top: 1px solid var(--color-gold);
+}
+
+.pg-rev__cta-inner {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 1023px) {
+  .pg-rev__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 767px) {
+  .pg-rev__hero {
+    padding-block: 3.5rem 2.5rem;
+  }
+
+  .pg-rev__summary {
+    padding-block: 2rem;
+  }
+
+  .pg-rev__big-rating {
+    font-size: 3.5rem;
+  }
+
+  .pg-rev__grid-section {
+    padding-block: 2.5rem 3.5rem;
+  }
+
+  .pg-rev__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pg-rev__cta-section {
+    padding-block: 3rem;
+  }
+}

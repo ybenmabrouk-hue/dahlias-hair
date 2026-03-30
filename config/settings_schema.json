@@ -127,6 +127,31 @@
     ]
   },
   {
+    "name": "Pages",
+    "settings": [
+      {
+        "type": "text",
+        "id": "how_to_use_video_url",
+        "label": "How to Use Video URL",
+        "info": "Paste a YouTube or Vimeo embed URL, e.g. https://www.youtube.com/embed/VIDEO_ID",
+        "placeholder": "https://www.youtube.com/embed/VIDEO_ID"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Contact Email Address",
+        "info": "Displayed on the Contact page",
+        "placeholder": "hello@dahlias-hair.com"
+      },
+      {
+        "type": "url",
+        "id": "trustpilot_url",
+        "label": "Trustpilot Page URL",
+        "info": "Link to your brand's Trustpilot review page"
+      }
+    ]
+  },
+  {
     "name": "Favicon",
     "settings": [
       {

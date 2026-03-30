@@ -272,6 +272,11 @@
               {{ section.settings.tab_whats_included }}
             {%- elsif tab_id == 'how_to_use' -%}
               {{ section.settings.tab_how_to_use }}
+              <p style="margin-block-start: 1.25rem;">
+                <a href="/pages/how-to-use" style="color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px;">
+                  {{ 'pages.how_to_use.full_guide_label' | t }}
+                </a>
+              </p>
             {%- elsif tab_id == 'shipping_returns' -%}
               {{ section.settings.tab_shipping_returns }}
             {%- endif -%}

@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-reviews",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
