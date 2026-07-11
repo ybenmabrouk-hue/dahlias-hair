@@ -36,7 +36,7 @@
             "text_color": "",
             "stacked_button": true,
             "button_1_text": "SHOP NOW",
-            "button_1_link": "shopify://products/vanity-case",
+            "button_1_link": "shopify://products/the-vanity-case",
             "button_1_color": "btn--white",
             "button_1_style": "btn--text",
             "button_1_size": "btn--small",
