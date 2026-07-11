@@ -92,6 +92,7 @@
         },
         "timer_NUAphU": {
           "type": "timer",
+          "disabled": true,
           "settings": {
             "end_date": "2026-1-30",
             "end_time": "11:59",
@@ -106,18 +107,6 @@
             "text_color": "#000000",
             "bg_color": "#f7f6f4",
             "text_align": "text-center",
-            "padding_bottom": 20
-          }
-        },
-        "fit_guide_kMrhyr": {
-          "type": "fit-guide",
-          "settings": {
-            "heading": "Fit",
-            "selected_segment": "4",
-            "left_label": "Small",
-            "middle_label": "True to size",
-            "right_label": "Large",
-            "fit_color": "",
             "padding_bottom": 20
           }
         },
@@ -160,9 +149,9 @@
             "tabs_bg_color": "",
             "show_accordion_divider": true,
             "line_thickness": "normal",
-            "accordion_heading": "Size and fit",
+            "accordion_heading": "Details",
             "heading_style": "font-body",
-            "accordion_text": "<p>Fits true to size. Measurements included in our <a href=\"https://palo-alto-theme-vibrant.myshopify.com/pages/size-chart\" title=\"Size chart full\">Size Chart</a></p>",
+            "accordion_text": "<p>Compact vanity case with a structured shape, secure zip closure, and a compartmentalized interior to keep your beauty essentials organized.</p>",
             "accordion_page": "",
             "padding_bottom": 0
           }
@@ -180,7 +169,7 @@
             "line_thickness": "normal",
             "accordion_heading": "Care information",
             "heading_style": "font-body",
-            "accordion_text": "<p>For best results, dry clean or hand wash with natural detergent. Machine wash on delicate. Lay flat to dry. </p>",
+            "accordion_text": "<p>Wipe clean with a soft, dry cloth. Avoid prolonged direct sunlight and contact with water.</p>",
             "accordion_page": "",
             "padding_bottom": 0
           }
@@ -227,7 +216,6 @@
         "icon_xjYgQg",
         "form",
         "timer_NUAphU",
-        "fit_guide_kMrhyr",
         "icon_jjk8UW",
         "icon_fTycQw",
         "bd7f4049-bdbb-4f44-8fe0-806fd3d5066d",
@@ -270,7 +258,7 @@
             "enable_border": true,
             "heading": "",
             "text_size": 125,
-            "text": "<p>The fit is perfect and makes me feel confident every time I wear it.</p>",
+            "text": "<p>Finally, everything in one place. My whole vanity table is organized.</p>",
             "content_size": 100,
             "customer_name": "Laila R.",
             "subheading": "<p>Brooklyn, NY</p>"
@@ -283,7 +271,7 @@
             "enable_border": true,
             "heading": "",
             "text_size": 125,
-            "text": "<p>Beautiful designs that are both stylish and timeless.</p>",
+            "text": "<p>Beautifully made and sturdy enough for daily use.</p>",
             "content_size": 100,
             "customer_name": "Samira Z.",
             "subheading": "<p>Los Angeles, CA</p>"
@@ -296,7 +284,7 @@
             "enable_border": true,
             "heading": "",
             "text_size": 125,
-            "text": "<p>The fabric quality is incredible—soft yet durable.</p>",
+            "text": "<p>The quality is incredible—sturdy zippers and a case that holds its shape.</p>",
             "content_size": 100,
             "customer_name": "Erikah L.",
             "subheading": "<p>12 days ago</p>"
@@ -309,7 +297,7 @@
             "enable_border": true,
             "heading": "",
             "text_size": 125,
-            "text": "<p>I always get compliments when I wear their pieces.</p>",
+            "text": "<p>I always get compliments on it when I travel.</p>",
             "content_size": 100,
             "customer_name": "Sandy B.",
             "subheading": "<p>Verified customer</p>"
@@ -322,7 +310,7 @@
             "enable_border": true,
             "heading": "",
             "text_size": 125,
-            "text": "<p>Effortless style that works for day or night.</p>",
+            "text": "<p>Perfect size for my counter and for my carry-on.</p>",
             "content_size": 100,
             "customer_name": "Tina D.",
             "subheading": "<p>Verified customer</p>"
@@ -335,7 +323,7 @@
             "enable_border": true,
             "heading": "",
             "text_size": 125,
-            "text": "<p>Comfortable clothes that still look polished.</p>",
+            "text": "<p>Compact but fits so much more than I expected.</p>",
             "content_size": 100,
             "customer_name": "Amelia Ngoy",
             "subheading": "<p>Denver, CO</p>"
@@ -348,7 +336,7 @@
             "enable_border": true,
             "heading": "",
             "text_size": 125,
-            "text": "<p>Truly flattering cuts for every body shape.</p>",
+            "text": "<p>Exactly what I needed to stop digging through my makeup bag.</p>",
             "content_size": 100,
             "customer_name": "Gianna R.",
             "subheading": "<p>Loyal Customer</p>"
@@ -361,7 +349,7 @@
             "enable_border": true,
             "heading": "",
             "text_size": 125,
-            "text": "<p>My new go-to brand for chic, everyday outfits.</p>",
+            "text": "<p>My new go-to gift for anyone who loves a tidy vanity.</p>",
             "content_size": 100,
             "customer_name": "Keely L.",
             "subheading": "<p>London, UK</p>"
