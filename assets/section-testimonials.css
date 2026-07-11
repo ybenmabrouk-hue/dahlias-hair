@@ -47,7 +47,7 @@
   white-space: normal;
   vertical-align: top;
   width: var(--item-width) !important;
-  margin-right: var(--grid-gutter) !important;
+  margin-inline-end: var(--grid-gutter) !important;
 }
 .testimonials__ticker .ticker--animated {
   animation-iteration-count: infinite;
@@ -68,7 +68,7 @@
 }
 .testimonials__slider:not(.flickity-enabled) .testimonial__item {
   width: 100%;
-  margin-right: 0;
+  margin-inline-end: 0;
 }
 
 .testimonials__slider {
@@ -210,11 +210,11 @@
 
 .testimonial__stars .rating__star__empty .icon,
 .testimonial__stars .rating__star__full .icon {
-  margin-right: 10px;
+  margin-inline-end: 10px;
 }
 .testimonial__stars .rating__star__empty .icon:last-child,
 .testimonial__stars .rating__star__full .icon:last-child {
-  margin-right: 0;
+  margin-inline-end: 0;
 }
 
 .testimonial__text {

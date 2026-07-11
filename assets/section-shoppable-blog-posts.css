@@ -14,8 +14,8 @@
 @media only screen and (max-width: 767px) {
   .shoppable-blog__slider__container {
     overflow: hidden;
-    margin-left: calc(-1 * var(--gutter-mobile));
-    margin-right: calc(-1 * var(--gutter-mobile));
+    margin-inline-start: calc(-1 * var(--gutter-mobile));
+    margin-inline-end: calc(-1 * var(--gutter-mobile));
   }
 }
 
@@ -63,7 +63,7 @@
     content: "";
     display: block;
     position: relative;
-    padding-right: var(--gutter-mobile);
+    padding-inline-end: var(--gutter-mobile);
   }
 }
 @media only screen and (max-width: 479px) {
@@ -89,13 +89,13 @@
   width: var(--item-width);
   flex: 0 0 auto;
   color: var(--white);
-  text-align: left;
+  text-align: start;
   line-height: 1.5625;
   overflow: hidden;
 }
 @media only screen and (min-width: 768px) {
   .blog-item {
-    margin-right: var(--grid-gutter);
+    margin-inline-end: var(--grid-gutter);
   }
   .blog-item:only-child {
     margin: 0 auto;
@@ -116,11 +116,11 @@
   .blog-item {
     --item-outer: 20px;
     scroll-snap-align: start;
-    margin-right: var(--gutter-mobile);
+    margin-inline-end: var(--gutter-mobile);
     width: var(--item-width-mobile);
   }
   .blog-item:last-child {
-    margin-right: 0;
+    margin-inline-end: 0;
   }
 }
 .blog-item .overlay {

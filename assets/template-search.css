@@ -96,17 +96,17 @@
 
 @media only screen and (min-width: 768px) {
   .search-page:not(.search-page--filters-disabled) .collection__sort-bar {
-    margin-left: 240px;
+    margin-inline-start: 240px;
   }
 }
 @media only screen and (min-width: 1024px) {
   .search-page:not(.search-page--filters-disabled) .collection__sort-bar {
-    margin-left: calc(240px + var(--gutter) / 2);
+    margin-inline-start: calc(240px + var(--gutter) / 2);
   }
 }
 @media only screen and (min-width: 1440px) {
   .search-page:not(.search-page--filters-disabled) .collection__sort-bar {
-    margin-left: calc(300px + var(--gutter) / 2);
+    margin-inline-start: calc(300px + var(--gutter) / 2);
   }
 }
 
@@ -141,7 +141,7 @@
 }
 @media only screen and (min-width: 1440px) {
   .collection__filters + .collection__products .search-page__note {
-    padding-right: 320px;
+    padding-inline-end: 320px;
   }
 }
 

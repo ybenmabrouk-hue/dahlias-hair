@@ -90,7 +90,7 @@
   align-items: center;
   gap: 12px;
   max-width: 50%;
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 @media only screen and (max-width: 767px) {
   .has-multiple-options .cart-bar__form {
@@ -124,8 +124,8 @@
 .cart-bar__form .selector-wrapper {
   height: 100%;
   min-width: 120px;
-  padding-right: 5px;
-  border-left: 1px solid var(--border);
+  padding-inline-end: 5px;
+  border-inline-start: 1px solid var(--border);
 }
 .cart-bar__form .product__submit {
   min-width: 0;
@@ -140,8 +140,8 @@
   position: relative;
   overflow: hidden;
   min-height: 50px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-inline-start: 35px;
+  padding-inline-end: 35px;
   margin: 0;
   line-height: 0;
   text-overflow: ellipsis;
@@ -205,7 +205,7 @@
   justify-content: flex-start;
   position: relative;
   min-width: 0;
-  padding-right: 10px;
+  padding-inline-end: 10px;
 }
 .cart-bar__info .cart-bar__product__price {
   padding: 0;
@@ -215,7 +215,7 @@
   .cart-bar__info {
     flex-wrap: wrap;
     justify-content: center;
-    padding-right: 0;
+    padding-inline-end: 0;
     text-align: center;
   }
   .cart-bar__info:not(:last-child) {
@@ -247,7 +247,7 @@
 @media only screen and (max-width: 1439px) {
   .cart-bar__product__title {
     display: inline;
-    text-align: left;
+    text-align: start;
     padding: 0 3px;
     white-space: normal;
   }
@@ -273,8 +273,8 @@
 }
 @media only screen and (max-width: 1439px) {
   .cart-bar__product__price .product__price--sale {
-    padding-right: 6px;
-    margin-right: 0;
+    padding-inline-end: 6px;
+    margin-inline-end: 0;
   }
 }
 
@@ -287,7 +287,7 @@
 }
 
 .cart-bar__submit {
-  margin-right: 0;
+  margin-inline-end: 0;
 }
 
 @media only screen and (max-width: 767px) {

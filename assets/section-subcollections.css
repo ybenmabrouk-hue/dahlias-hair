@@ -6,7 +6,7 @@
 @media only screen and (max-width: 767px) {
   .subcollections .carousel--mobile-one {
     overflow-x: hidden;
-    padding-right: var(--gutter-mobile);
+    padding-inline-end: var(--gutter-mobile);
   }
 }
 
@@ -15,7 +15,7 @@
 }
 .carousel--inactive .subcollection:only-child {
   width: 100%;
-  margin-right: 0;
+  margin-inline-end: 0;
 }
 
 .subcollection__image {
@@ -41,7 +41,7 @@
   padding: 20px;
   margin: 0;
   word-break: break-word;
-  text-align: left;
+  text-align: start;
   color: var(--text);
 }
 .subcollection__title span {

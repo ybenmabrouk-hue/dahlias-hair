@@ -131,11 +131,11 @@
 }
 
 .text__button:first-of-type {
-  margin-right: var(--text-gap);
+  margin-inline-end: var(--text-gap);
 }
 @media only screen and (max-width: 479px) {
   .text__button:first-of-type {
-    margin-right: 0;
+    margin-inline-end: 0;
   }
 }
 

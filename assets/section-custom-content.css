@@ -45,15 +45,15 @@
 }
 
 .wrapper--full .brick-blocks--gap {
-  padding-left: var(--grid-gutter);
-  padding-right: var(--grid-gutter);
+  padding-inline-start: var(--grid-gutter);
+  padding-inline-end: var(--grid-gutter);
 }
 @media only screen and (min-width: 1024px) {
   .brick-blocks--gap .brick-block {
     flex-basis: calc(50% - var(--grid-gutter));
   }
   .brick-blocks--gap .brick-block + .brick-block {
-    margin-left: var(--grid-gutter);
+    margin-inline-start: var(--grid-gutter);
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {

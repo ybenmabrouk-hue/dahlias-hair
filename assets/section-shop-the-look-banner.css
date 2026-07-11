@@ -267,7 +267,7 @@
   display: grid;
   gap: var(--inner, 15px);
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  text-align: left;
+  text-align: start;
 }
 
 .product-grid-item--inline .product-grid-item__image {

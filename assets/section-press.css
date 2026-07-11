@@ -19,7 +19,7 @@
 .press .press__item__content ol {
   margin-bottom: 0;
   display: inline-grid;
-  text-align: left;
+  text-align: start;
 }
 
 .press--no-blockquotes .press__logos-slide {
@@ -87,7 +87,7 @@
   display: inline-block;
   width: 10px;
   height: 10px;
-  margin-left: 4px;
+  margin-inline-start: 4px;
   vertical-align: middle;
 }
 
@@ -200,7 +200,7 @@
   font-size: var(--font-size-adjust);
   line-height: calc(0.2 * var(--font-size-adjust));
   opacity: 0.1;
-  text-align: left;
+  text-align: start;
 }
 @media only screen and (max-width: 1023px) {
   .press__item--quotes {

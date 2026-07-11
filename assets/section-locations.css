@@ -20,7 +20,7 @@
 }
 .locations .flickity-prev-next-button.previous {
   left: auto;
-  margin-right: var(--grid-gutter);
+  margin-inline-end: var(--grid-gutter);
 }
 .locations .flickity-prev-next-button.next {
   right: auto;
@@ -53,7 +53,7 @@
 }
 
 .locations__info {
-  padding-right: 60px;
+  padding-inline-end: 60px;
 }
 
 .locations__info .section__header {

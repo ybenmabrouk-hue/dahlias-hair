@@ -71,8 +71,8 @@ header, nav, section, article, aside, footer {
 }
 
 .giftcard__header img {
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
   display: block;
   padding-bottom: 10px;
 }
@@ -208,10 +208,10 @@ header, nav, section, article, aside, footer {
   bottom: 0;
   width: 0;
   height: 0;
-  margin-left: -5px;
+  margin-inline-start: -5px;
   margin-bottom: -5px;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
+  border-inline-start: 8px solid transparent;
+  border-inline-end: 8px solid transparent;
   border-top: 5px solid var(--text);
   border-top: 5px solid rgba(51, 51, 51, 0.9);
 }
@@ -230,7 +230,7 @@ header, nav, section, article, aside, footer {
   line-height: 16px;
   text-shadow: none;
   padding: 0.5em 0.75em;
-  margin-left: 0.25em;
+  margin-inline-start: 0.25em;
 }
 .tooltip__label small {
   text-transform: uppercase;
@@ -274,7 +274,7 @@ header, nav, section, article, aside, footer {
   width: 17px;
   height: 17px;
   vertical-align: middle;
-  margin-right: 5px;
+  margin-inline-end: 5px;
   opacity: 0.25;
   background-image: url("//cdn.shopify.com/s/assets/gift-card/icon-print-164daa1ae32d10d1f9b83ac21b6f2c70.png");
   background-repeat: no-repeat;
@@ -318,8 +318,8 @@ header, nav, section, article, aside, footer {
   }
   .giftcard__actions .btn, .giftcard__actions .shopify-payment-button__button--unbranded {
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
   .action-link {
     display: none;

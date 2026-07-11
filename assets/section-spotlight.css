@@ -44,8 +44,8 @@
 @media only screen and (min-width: 768px) {
   .spotlight .brick-blocks--reverse .brick-block:last-child {
     order: -1;
-    margin-left: 0;
-    margin-right: var(--grid-gutter);
+    margin-inline-start: 0;
+    margin-inline-end: var(--grid-gutter);
   }
 }
 @media only screen and (max-width: 767px) {
@@ -73,7 +73,7 @@
 
 .spotlight__header .section__heading {
   --heading-margin: var(--inner);
-  text-align: left;
+  text-align: start;
   text-transform: uppercase;
 }
 
@@ -138,7 +138,7 @@
     width: auto;
     height: calc(1rem * var(--adjust-button));
     vertical-align: middle;
-    margin-left: 5px;
+    margin-inline-start: 5px;
   }
 }
 

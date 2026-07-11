@@ -134,7 +134,7 @@
     content: "";
     display: block;
     position: relative;
-    padding-right: var(--gutter-mobile);
+    padding-inline-end: var(--gutter-mobile);
   }
 }
 
@@ -209,7 +209,7 @@
     scroll-snap-align: start;
   }
   .image-accordions--spacing .image-accordion {
-    padding-left: var(--gutter-mobile);
+    padding-inline-start: var(--gutter-mobile);
   }
 }
 
@@ -226,7 +226,7 @@
   min-width: 100%;
   min-height: 100%;
   max-height: none;
-  padding-right: 263%;
+  padding-inline-end: 263%;
   transform: translateX(-50%);
 }
 .image-accordion__image__svg .placeholder-svg-filled {

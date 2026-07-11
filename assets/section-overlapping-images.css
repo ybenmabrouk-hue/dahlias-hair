@@ -89,8 +89,8 @@
 @media only screen and (max-width: 767px) {
   .overlapping-images__images-inner {
     width: calc(100% + var(--gutter-mobile) * 2);
-    margin-left: calc(-1 * var(--gutter-mobile));
-    margin-right: calc(-1 * var(--gutter-mobile));
+    margin-inline-start: calc(-1 * var(--gutter-mobile));
+    margin-inline-end: calc(-1 * var(--gutter-mobile));
   }
 }
 
@@ -118,7 +118,7 @@
 @media only screen and (max-width: 767px) {
   .overlapping-images__images--single-mobile .overlapping-images__images-inner {
     width: 100%;
-    margin-left: 0;
+    margin-inline-start: 0;
   }
   .overlapping-images__images--single-mobile .overlapping-images__image--primary {
     left: auto;

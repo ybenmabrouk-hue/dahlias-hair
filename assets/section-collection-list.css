@@ -100,7 +100,7 @@
 .buttons-list .icon {
   height: calc(1rem * var(--adjust-text) * 0.9);
   width: auto;
-  margin-left: 3px;
+  margin-inline-start: 3px;
   flex-shrink: 0;
 }
 .buttons-list .btn--primary .icon {
@@ -246,7 +246,7 @@
   word-break: break-word;
 }
 .buttons-list .list-collections__item__title {
-  text-align: left;
+  text-align: start;
   letter-spacing: var(--letter-spacing);
 }
 
@@ -267,7 +267,7 @@
 }
 @media only screen and (max-width: 479px) {
   .list-collections__item__overlayed {
-    margin-left: calc(var(--grid-gutter) / 2);
+    margin-inline-start: calc(var(--grid-gutter) / 2);
     width: calc(100% - var(--grid-gutter));
   }
 }

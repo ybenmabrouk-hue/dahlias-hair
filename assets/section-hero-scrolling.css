@@ -38,7 +38,7 @@
   --text-size: calc(var(--adjust-body) * 1rem);
   margin: 0 calc(var(--spacing-inline) / 2);
   width: 0;
-  border-left: 1px solid currentcolor;
+  border-inline-start: 1px solid currentcolor;
   height: calc(var(--line-height, 1.5) * var(--text-size));
   display: inline-block;
   vertical-align: bottom;
@@ -115,20 +115,20 @@
   overflow: hidden;
 }
 .hero-scrolling__inner.item--right, .hero-scrolling__inner.item--bottom-right, .hero-scrolling__inner.item--top-right {
-  text-align: right;
+  text-align: end;
 }
 .hero-scrolling__inner.item--right hr, .hero-scrolling__inner.item--bottom-right hr, .hero-scrolling__inner.item--top-right hr {
-  margin-right: 0;
-  margin-left: auto;
+  margin-inline-end: 0;
+  margin-inline-start: auto;
 }
 .hero-scrolling__inner.text-left {
-  text-align: left;
+  text-align: start;
 }
 .hero-scrolling__inner.text-center {
   text-align: center;
 }
 .hero-scrolling__inner.text-right {
-  text-align: right;
+  text-align: end;
 }
 
 .hero-scrolling__image-container {
@@ -174,8 +174,8 @@
 
 .hero-scrolling__text-wrapper {
   padding: calc(var(--gutter) / 2);
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 @media only screen and (max-width: 767px) {
   .hero-scrolling__text-wrapper {
