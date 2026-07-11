@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter_VXj84C": {
+          "type": "newsletter",
+          "settings": {
+            "alignment": "text-left",
+            "title": "Sign up for offers and get 10% off",
+            "uppercase_heading": true,
+            "heading_size": 50,
+            "text": "<p>Join our newsletter to receive the latest updates and get 10% off your FIRST order.</p>",
+            "button_text": "",
+            "button_color": "btn--white",
+            "button_style": "btn--solid",
+            "column_width": "75"
+          }
+        },
+        "footer-block-0": {
+          "type": "logo",
+          "settings": {
+            "alignment": "text-left",
+            "logo_width": 100,
+            "show_shop_name": false,
+            "text": "",
+            "column_width": "20"
+          }
+        },
+        "e4972eef-899e-4b48-a0e2-c8be828214e3": {
+          "type": "divider",
+          "settings": {
+            "show_border_line": false,
+            "column_width": "20"
+          }
+        },
+        "footer-block-2": {
+          "type": "link",
+          "settings": {
+            "alignment": "text-left",
+            "menu": "",
+            "title": "Help",
+            "column_width": "15"
+          }
+        },
+        "85419cdc-79f6-42de-b7c4-aab7a9f33c50": {
+          "type": "link",
+          "settings": {
+            "alignment": "text-left",
+            "menu": "",
+            "title": "Company",
+            "column_width": "15"
+          }
+        },
+        "logo_full_zcnpfe": {
+          "type": "logo_full",
+          "settings": {
+            "alignment": "text-center",
+            "logo_width": 100,
+            "padding_top": 0
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_VXj84C",
+        "footer-block-0",
+        "e4972eef-899e-4b48-a0e2-c8be828214e3",
+        "footer-block-2",
+        "85419cdc-79f6-42de-b7c4-aab7a9f33c50",
+        "logo_full_zcnpfe"
+      ],
+      "settings": {
+        "show_footer_wave": false,
+        "enable_footer_parallax": true,
+        "increase_border_radius": true,
+        "bottom_bar_alignment": "text-left",
+        "show_social_links": true,
+        "enable_follow_on_shop": true,
+        "show_payment_icons": true,
+        "enable_greyscale": true,
+        "bottom_menu": "",
+        "color_text": "#ffffff",
+        "color_scheme": "",
+        "color_border": "#ffffff",
+        "show_locale_selector": true,
+        "show_locale_code": true,
+        "show_country_selector": true,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "width": "wrapper--full-padded",
+        "padding_top": 20,
+        "padding_bottom": 10
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,66 +1,105 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "hero": {
-      "type": "hero",
+    "90e8ecf2-4c0c-40f6-afb0-9a1386cbb6df": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_H9Xyya": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/model-in-neutral-colors-by-window.jpg",
+            "overlay_type": "disabled",
+            "video_link_bg": "",
+            "content_width": 100,
+            "text_position": "top-right",
+            "text_alignment": "right",
+            "mobile_text_position": "center",
+            "mobile_text_alignment": "right",
+            "subheading": "",
+            "title": "<p>Introducing: Dahlia</p>",
+            "heading_size": 100,
+            "heading_highlight_type": "underline-hand-drawn",
+            "highlight_color": "#fff3f2",
+            "highlight_text_color": "#ffffff",
+            "text": "Born in Paris. Built for her.",
+            "text_size": 70,
+            "show_text_background": false,
+            "bg_color": "",
+            "text_color": "",
+            "stacked_button": true,
+            "button_1_text": "SHOP NOW",
+            "button_1_link": "shopify://products/the-vanity-case",
+            "button_1_color": "btn--white",
+            "button_1_style": "btn--text",
+            "button_1_size": "btn--small",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_color": "btn--black",
+            "button_2_style": "btn--solid",
+            "button_2_size": "btn--small",
+            "video_text": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_H9Xyya"
+      ],
       "settings": {
-        "min_height": 100,
-        "show_overlay": true,
-        "overlay_opacity": 20
+        "slide_height": "full-height",
+        "enable_mobile_height": true,
+        "mobile_slide_height": "full-height-mobile",
+        "show_nav_dots": false,
+        "show_nav_arrows": false,
+        "show_arrow_down": false,
+        "autoplay": false,
+        "duration": 4,
+        "transition": "fade",
+        "enable_zoom_animation": true,
+        "enable_card_scrolling": true,
+        "increase_border_radius": true,
+        "color_scheme": ""
       }
     },
-    "trust-bar": {
-      "type": "trust-bar",
-      "settings": {}
-    },
-    "problem-solution": {
-      "type": "problem-solution",
-      "settings": {}
-    },
-    "feature-highlights": {
-      "type": "feature-highlights",
-      "settings": {}
-    },
-    "bundle-showcase": {
-      "type": "bundle-showcase",
-      "settings": {}
-    },
-    "how-it-works": {
-      "type": "how-it-works",
-      "settings": {}
-    },
-    "social-proof": {
-      "type": "social-proof",
-      "blocks": {
-        "ugc-1": { "type": "ugc_item", "settings": {} },
-        "ugc-2": { "type": "ugc_item", "settings": {} },
-        "ugc-3": { "type": "ugc_item", "settings": {} },
-        "ugc-4": { "type": "ugc_item", "settings": {} },
-        "ugc-5": { "type": "ugc_item", "settings": {} },
-        "ugc-6": { "type": "ugc_item", "settings": {} }
-      },
-      "block_order": ["ugc-1", "ugc-2", "ugc-3", "ugc-4", "ugc-5", "ugc-6"],
-      "settings": {}
-    },
-    "faq": {
-      "type": "faq",
-      "settings": {}
-    },
-    "sticky-cart-bar": {
-      "type": "sticky-cart-bar",
+    "section-collection": {
+      "type": "section-collection",
       "settings": {
-        "price": "799"
+        "collection": "the-edit",
+        "products_layout": "carousel",
+        "products_limit": 4,
+        "products_per_row_on_desktop": 4,
+        "columns_mobile": "2",
+        "text_alignment": "text-left",
+        "title": "<p>Best Sellers</p>",
+        "heading_size": 75,
+        "heading_highlight_type": "circle",
+        "highlight_color": "#d43747",
+        "highlight_text_color": "#000000",
+        "text": "",
+        "text_size": 75,
+        "button_position": "top",
+        "button_text": "",
+        "button_color": "btn--primary",
+        "button_style": "btn--solid",
+        "button_size": "btn--small",
+        "color_scheme": "",
+        "enable_slider_mobile": false,
+        "width": "wrapper--full-padded",
+        "padding_top": 50,
+        "padding_bottom": 74
       }
     }
   },
   "order": [
-    "hero",
-    "trust-bar",
-    "problem-solution",
-    "feature-highlights",
-    "bundle-showcase",
-    "how-it-works",
-    "social-proof",
-    "faq",
-    "sticky-cart-bar"
+    "90e8ecf2-4c0c-40f6-afb0-9a1386cbb6df",
+    "section-collection"
   ]
 }

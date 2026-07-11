@@ -1,9 +1,204 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
-      "type": "page-contact",
-      "settings": {}
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "46135749-756a-47d9-9cd2-5a1a9d750dc1": {
+      "type": "section-text",
+      "blocks": {
+        "template--16737047871766__46135749-756a-47d9-9cd2-5a1a9d750dc1-16671545760217c3d5-0": {
+          "type": "subheading",
+          "settings": {
+            "text": "<p>Contact us</p>",
+            "size": 100,
+            "margin_bottom": 16
+          }
+        },
+        "template--16737047871766__46135749-756a-47d9-9cd2-5a1a9d750dc1-16671545760217c3d5-1": {
+          "type": "heading",
+          "settings": {
+            "text": "<p>How can we help you?</p>",
+            "size": 150,
+            "heading_highlight_type": "circle",
+            "highlight_color": "#d43747",
+            "highlight_text_color": "#000000"
+          }
+        },
+        "template--16737047871766__46135749-756a-47d9-9cd2-5a1a9d750dc1-16671545760217c3d5-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Need to get in touch? Feel free to reach out using the contact form below or for specific inquiries, reach out to the specific email address. We're available to chat Monday - Friday 9a.m - 9p.m PST. </p>",
+            "size": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--16737047871766__46135749-756a-47d9-9cd2-5a1a9d750dc1-16671545760217c3d5-0",
+        "template--16737047871766__46135749-756a-47d9-9cd2-5a1a9d750dc1-16671545760217c3d5-1",
+        "template--16737047871766__46135749-756a-47d9-9cd2-5a1a9d750dc1-16671545760217c3d5-2"
+      ],
+      "settings": {
+        "text_position": "center",
+        "width": "wrapper--narrow",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "75b65038-f658-4895-b63c-8f65c49cd645": {
+      "type": "section-icons-row",
+      "blocks": {
+        "template--16737047871766__75b65038-f658-4895-b63c-8f65c49cd645-1667153805a86dfb7b-0": {
+          "type": "text",
+          "settings": {
+            "icon_name": "support",
+            "title": "Order Status",
+            "text": "<p>orders@companyname.com</p>"
+          }
+        },
+        "template--16737047871766__75b65038-f658-4895-b63c-8f65c49cd645-1667153805a86dfb7b-1": {
+          "type": "text",
+          "settings": {
+            "icon_name": "mail",
+            "title": "Start a Return",
+            "text": "<p>returns@companyname.com</p>"
+          }
+        },
+        "template--16737047871766__75b65038-f658-4895-b63c-8f65c49cd645-1667153805a86dfb7b-2": {
+          "type": "text",
+          "settings": {
+            "icon_name": "clipboard",
+            "title": "Sizing and Product Info",
+            "text": "<p>products@companyname.com</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16737047871766__75b65038-f658-4895-b63c-8f65c49cd645-1667153805a86dfb7b-0",
+        "template--16737047871766__75b65038-f658-4895-b63c-8f65c49cd645-1667153805a86dfb7b-1",
+        "template--16737047871766__75b65038-f658-4895-b63c-8f65c49cd645-1667153805a86dfb7b-2"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "alignment": "center",
+        "columns": 3,
+        "icons_width": 30,
+        "show_vertical_borders": true,
+        "show_top_border": true,
+        "show_bottom_border": true,
+        "heading_size": 120,
+        "text_size": 100,
+        "text_color": "#000000",
+        "box_color": "",
+        "color_border": "#333",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--black",
+        "button_style": "btn--secondary btn--small",
+        "button_size": "btn--small",
+        "layout_mobile": "stacked",
+        "width": "wrapper",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "contact-form": {
+      "type": "section-contact-form",
+      "blocks": {
+        "contact-form-1": {
+          "type": "text",
+          "settings": {
+            "title": "What's your name?",
+            "required": true
+          }
+        },
+        "contact-form-2": {
+          "type": "email",
+          "settings": {
+            "title": "What's your email?",
+            "required": true
+          }
+        },
+        "contact-form-3": {
+          "type": "body",
+          "settings": {
+            "title": "Message",
+            "required": true
+          }
+        }
+      },
+      "block_order": [
+        "contact-form-1",
+        "contact-form-2",
+        "contact-form-3"
+      ],
+      "settings": {
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--large",
+        "width": "wrapper--narrow",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    },
+    "locations": {
+      "type": "section-locations",
+      "blocks": {
+        "locations-0": {
+          "type": "locations",
+          "settings": {
+            "title": "566 Emerson Street Palo Alto, California",
+            "working_time": "<p>Mon - Fri: 8am - 5pm</p><p>Sat: 10am - 5pm</p><p>Sun: 12pm - 5pm</p>"
+          }
+        },
+        "locations-1": {
+          "type": "locations",
+          "settings": {
+            "title": "100 Sunset Blvd, Los Angeles, California",
+            "working_time": "<p>Mon - Fri: 8am - 5pm</p><p>Sat: Closed</p><p>Sun: Closed</p>"
+          }
+        },
+        "locations-2": {
+          "type": "locations",
+          "settings": {
+            "title": "566 Cross Creek Rd, Malibu, California",
+            "working_time": "<p>Mon - Fri: 9am - 6pm</p><p>Sat: 12pm - 6pm</p><p>Sun: 12pm - 6pm</p>"
+          }
+        }
+      },
+      "block_order": [
+        "locations-0",
+        "locations-1",
+        "locations-2"
+      ],
+      "settings": {
+        "subheading": "Our stores",
+        "title": "Locations & hours",
+        "padding_top": 60,
+        "padding_bottom": 80
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "46135749-756a-47d9-9cd2-5a1a9d750dc1",
+    "75b65038-f658-4895-b63c-8f65c49cd645",
+    "contact-form",
+    "locations"
+  ]
 }

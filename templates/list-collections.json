@@ -1,0 +1,146 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "list-collections",
+      "blocks": {
+        "63a1aec7-766e-4dff-bc16-4ed9e5c5ebca": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "c404c0cf-5429-46bc-b1bf-9cb531d379c5": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "eae3bd8b-f9b2-4a6a-90e0-48acb7eee4f3": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "021abb24-875f-415d-8610-3435308b47b0": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "dd197815-f6df-4deb-b7bd-c254232e8fe2": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "768cc2de-6205-4a82-878d-3e7c35ee7e3d": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "e55b3eb2-5655-42e9-bce1-eab176a919ac": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "48f08b12-772d-4974-a621-5f03d7ab2498": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "3b792074-b271-4dc3-99d0-6a9fa18a4d4f": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "455573c2-50a8-481a-b860-364348aa7790": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "0e9a4fd3-1d55-405c-baed-57ece19c529c": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        },
+        "59cc0e82-353d-4eaf-a7f4-c5cffb376adf": {
+          "type": "collection",
+          "settings": {
+            "heading": "",
+            "block_text_color": "",
+            "bg_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "63a1aec7-766e-4dff-bc16-4ed9e5c5ebca",
+        "c404c0cf-5429-46bc-b1bf-9cb531d379c5",
+        "eae3bd8b-f9b2-4a6a-90e0-48acb7eee4f3",
+        "021abb24-875f-415d-8610-3435308b47b0",
+        "dd197815-f6df-4deb-b7bd-c254232e8fe2",
+        "768cc2de-6205-4a82-878d-3e7c35ee7e3d",
+        "e55b3eb2-5655-42e9-bce1-eab176a919ac",
+        "48f08b12-772d-4974-a621-5f03d7ab2498",
+        "3b792074-b271-4dc3-99d0-6a9fa18a4d4f",
+        "455573c2-50a8-481a-b860-364348aa7790",
+        "0e9a4fd3-1d55-405c-baed-57ece19c529c",
+        "59cc0e82-353d-4eaf-a7f4-c5cffb376adf"
+      ],
+      "settings": {
+        "title": "Shop All Collections",
+        "heading_size": 100,
+        "layout": "grid",
+        "alignment": "left",
+        "collections_per_row": 5,
+        "image_shape": "circle",
+        "image_aspect_ratio": 1,
+        "text_size": 120,
+        "overlay_text": false,
+        "section_text_color": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

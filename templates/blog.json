@@ -1,0 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "blog",
+      "settings": {
+        "default_color": "accent",
+        "blog_style": "photo",
+        "post_columns": 3,
+        "image_aspect_ratio": 0.9,
+        "show_rss_icon": false,
+        "show_date": true,
+        "show_author": false,
+        "show_tags": true,
+        "show_comments_count": false,
+        "tag_alignment": "center",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_divider_WLDBny": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "160fef01-8bb6-4e0d-9647-a1a1b312eb42": {
+      "type": "section-newsletter",
+      "settings": {
+        "flex_align": "align--middle-split",
+        "title": "Never miss a post!",
+        "text": "<p>Get the latest fashion news straight to your inbox</p>",
+        "extra_fields": "",
+        "button_text": "Sign up",
+        "image_height": "three-fifty-height",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_divider_hhCRyV": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_divider_WLDBny",
+    "160fef01-8bb6-4e0d-9647-a1a1b312eb42",
+    "section_divider_hhCRyV"
+  ]
+}

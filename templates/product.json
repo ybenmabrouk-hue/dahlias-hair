@@ -1,0 +1,563 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "badges_XQekng": {
+          "type": "badges",
+          "settings": {
+            "show_sale_badge": true,
+            "show_custom_badge": true,
+            "show_preorder_badge": true,
+            "show_badges_over_gallery": true,
+            "padding_bottom": 20
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading": "none",
+            "title_size": 125,
+            "padding_bottom": 0
+          }
+        },
+        "price_hGyfVQ": {
+          "type": "price",
+          "settings": {
+            "price_size": 100,
+            "bold_price": false,
+            "padding_bottom": 20
+          }
+        },
+        "inventory_countdown": {
+          "type": "inventory_countdown",
+          "settings": {
+            "max_inventory": 8,
+            "hide_inventory_count": false,
+            "padding_bottom": 16
+          }
+        },
+        "divider_tKQ6nA": {
+          "type": "divider",
+          "settings": {
+            "show_line": true,
+            "padding_bottom": 16
+          }
+        },
+        "icon_zCBf3k": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "text_size": 70,
+            "width": "half",
+            "text_alignment": "left",
+            "bg_color": "rgba(0,0,0,0)",
+            "padding_bottom": 32
+          }
+        },
+        "icon_xjYgQg": {
+          "type": "icon",
+          "disabled": true,
+          "settings": {
+            "icon_name": "none",
+            "icon_color": "",
+            "icon_width": 20,
+            "text_size": 70,
+            "width": "half",
+            "text_alignment": "left",
+            "bg_color": "rgba(0,0,0,0)",
+            "padding_bottom": 20
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_labels": true,
+            "show_quantity": true,
+            "show_payment_button": true,
+            "padding_bottom": 32
+          }
+        },
+        "timer_NUAphU": {
+          "type": "timer",
+          "settings": {
+            "end_date": "2026-1-30",
+            "end_time": "11:59",
+            "period": "am",
+            "end_message": "",
+            "digits_size": 65,
+            "heading": "Limited time offer",
+            "heading_size": 95,
+            "heading_style": "font-heading",
+            "text": "<p>Exclusive styles at 30% off, only for three days!</p>",
+            "text_size": 85,
+            "text_color": "#000000",
+            "bg_color": "#f7f6f4",
+            "text_align": "text-center",
+            "padding_bottom": 20
+          }
+        },
+        "fit_guide_kMrhyr": {
+          "type": "fit-guide",
+          "settings": {
+            "heading": "Fit",
+            "selected_segment": "4",
+            "left_label": "Small",
+            "middle_label": "True to size",
+            "right_label": "Large",
+            "fit_color": "",
+            "padding_bottom": 20
+          }
+        },
+        "icon_jjk8UW": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "mail",
+            "icon_color": "",
+            "icon_width": 20,
+            "icon_text": "Free shipping on orders over $100",
+            "text_size": 80,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "rgba(0,0,0,0)",
+            "padding_bottom": 16
+          }
+        },
+        "icon_fTycQw": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "recycle-circle",
+            "icon_color": "",
+            "icon_width": 20,
+            "icon_text": "Free 30 day returns",
+            "text_size": 80,
+            "width": "full",
+            "text_alignment": "left",
+            "bg_color": "rgba(0,0,0,0)",
+            "padding_bottom": 12
+          }
+        },
+        "bd7f4049-bdbb-4f44-8fe0-806fd3d5066d": {
+          "type": "product_accordion",
+          "settings": {
+            "accordion_style": "collapsible",
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": true,
+            "line_thickness": "normal",
+            "accordion_heading": "Size and fit",
+            "heading_style": "font-body",
+            "accordion_text": "<p>Fits true to size. Measurements included in our <a href=\"https://palo-alto-theme-vibrant.myshopify.com/pages/size-chart\" title=\"Size chart full\">Size Chart</a></p>",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "91779a1e-6481-4424-b896-fed67e53ffc2": {
+          "type": "product_accordion",
+          "settings": {
+            "accordion_style": "collapsible",
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": true,
+            "line_thickness": "normal",
+            "accordion_heading": "Care information",
+            "heading_style": "font-body",
+            "accordion_text": "<p>For best results, dry clean or hand wash with natural detergent. Machine wash on delicate. Lay flat to dry. </p>",
+            "accordion_page": "",
+            "padding_bottom": 0
+          }
+        },
+        "715a2d47-72f9-4058-ab53-ac703b859fb4": {
+          "type": "product_accordion",
+          "settings": {
+            "accordion_style": "collapsible",
+            "show_description": false,
+            "show_read_more": true,
+            "open_by_default": false,
+            "enable_full_width": false,
+            "tabs_bg_color": "",
+            "show_accordion_divider": true,
+            "line_thickness": "normal",
+            "accordion_heading": "Shipping and returns",
+            "heading_style": "font-body",
+            "accordion_text": "<p>Shipping</p><p>Orders can take 2-3 business days to process before shipping. As soon as your package has left our warehouse, you will receive a confirmation by email. <br/></p><p>Returns</p><p>﻿If for any reason you are unhappy with your purchase we offer returns for store credit within 7 days of delivery. If 7 days have passed since your purchase has been delivered, unfortunately, we are unable to offer you a credit or exchange.</p>",
+            "accordion_page": "",
+            "padding_bottom": 24
+          }
+        },
+        "upsell": {
+          "type": "upsell",
+          "settings": {
+            "padding_bottom": 0
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "enable_full_width": true,
+            "padding_bottom": 20
+          }
+        }
+      },
+      "block_order": [
+        "badges_XQekng",
+        "title",
+        "price_hGyfVQ",
+        "inventory_countdown",
+        "divider_tKQ6nA",
+        "icon_zCBf3k",
+        "icon_xjYgQg",
+        "form",
+        "timer_NUAphU",
+        "fit_guide_kMrhyr",
+        "icon_jjk8UW",
+        "icon_fTycQw",
+        "bd7f4049-bdbb-4f44-8fe0-806fd3d5066d",
+        "91779a1e-6481-4424-b896-fed67e53ffc2",
+        "715a2d47-72f9-4058-ab53-ac703b859fb4",
+        "upsell",
+        "description"
+      ],
+      "settings": {
+        "product_sticky_enable": true,
+        "image_layout": "grid",
+        "image_width": "large",
+        "product_image_aspect_ratio": true,
+        "show_cart_bar": true,
+        "enable_zoom": true,
+        "enable_video_looping": false,
+        "color_scheme": "",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 30
+      }
+    },
+    "166716198631433af0": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_testimonials_abpgFU": {
+      "type": "section-testimonials",
+      "blocks": {
+        "testimonial_j8yE8J": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": true,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>The fit is perfect and makes me feel confident every time I wear it.</p>",
+            "content_size": 100,
+            "customer_name": "Laila R.",
+            "subheading": "<p>Brooklyn, NY</p>"
+          }
+        },
+        "testimonial_XUMAQC": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": true,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Beautiful designs that are both stylish and timeless.</p>",
+            "content_size": 100,
+            "customer_name": "Samira Z.",
+            "subheading": "<p>Los Angeles, CA</p>"
+          }
+        },
+        "testimonial_fzeenU": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": true,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>The fabric quality is incredible—soft yet durable.</p>",
+            "content_size": 100,
+            "customer_name": "Erikah L.",
+            "subheading": "<p>12 days ago</p>"
+          }
+        },
+        "testimonial_7GnEyn": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": true,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>I always get compliments when I wear their pieces.</p>",
+            "content_size": 100,
+            "customer_name": "Sandy B.",
+            "subheading": "<p>Verified customer</p>"
+          }
+        },
+        "testimonial_pRTxxk": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": true,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Effortless style that works for day or night.</p>",
+            "content_size": 100,
+            "customer_name": "Tina D.",
+            "subheading": "<p>Verified customer</p>"
+          }
+        },
+        "testimonial_YFjG3E": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": true,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Comfortable clothes that still look polished.</p>",
+            "content_size": 100,
+            "customer_name": "Amelia Ngoy",
+            "subheading": "<p>Denver, CO</p>"
+          }
+        },
+        "testimonial_4XkV3V": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": true,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>Truly flattering cuts for every body shape.</p>",
+            "content_size": 100,
+            "customer_name": "Gianna R.",
+            "subheading": "<p>Loyal Customer</p>"
+          }
+        },
+        "testimonial_PWYQfY": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "enable_border": true,
+            "heading": "",
+            "text_size": 125,
+            "text": "<p>My new go-to brand for chic, everyday outfits.</p>",
+            "content_size": 100,
+            "customer_name": "Keely L.",
+            "subheading": "<p>London, UK</p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_j8yE8J",
+        "testimonial_XUMAQC",
+        "testimonial_fzeenU",
+        "testimonial_7GnEyn",
+        "testimonial_pRTxxk",
+        "testimonial_YFjG3E",
+        "testimonial_4XkV3V",
+        "testimonial_PWYQfY"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "subheading": "",
+        "subheading_size": 100,
+        "title": "Customer Reviews",
+        "heading_size": 100,
+        "text_alignment": "text-left",
+        "enable_autoplay": false,
+        "autoplay_speed": 100,
+        "direction": "ticker-ltr",
+        "color_scheme": "scheme-5",
+        "testimonial_block_color": "",
+        "star_color": "#e6caca",
+        "width": "wrapper--full-padded",
+        "slider_width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_columns_TBzVUw": {
+      "type": "section-columns",
+      "blocks": {
+        "text_block_NpBQj3": {
+          "type": "text_block",
+          "settings": {
+            "image_width": 100,
+            "title": "Sustainable & trendy",
+            "heading_size": 120,
+            "text": "<p>Our pieces are sustainably made, and designed to be a timeless piece in your wardrobe.</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--text",
+            "button_size": "btn--small",
+            "video_link_popup": ""
+          }
+        },
+        "text_block_x7j3R3": {
+          "type": "text_block",
+          "settings": {
+            "image_width": 100,
+            "title": "Elevate your style",
+            "heading_size": 120,
+            "text": "<p>Made with natural materials, each item is comfortable and easily machine washable.</p>",
+            "text_size": 100,
+            "button_text": "",
+            "button_link": "",
+            "button_color": "btn--black",
+            "button_style": "btn--text",
+            "button_size": "btn--small",
+            "video_link_popup": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_NpBQj3",
+        "text_block_x7j3R3"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "No need to sacrifice style for comfort.",
+        "heading_size": 140,
+        "layout_desktop": "carousel",
+        "align_text": "text-left",
+        "columns": 2,
+        "show_images": true,
+        "show_borders": false,
+        "layout_mobile": "stacked",
+        "columns_mobile": "1",
+        "equalize_height": true,
+        "desktop_aspect_ratio": 0.7,
+        "mobile_aspect_ratio": 1,
+        "color_scheme": "",
+        "color_borders": "#000000",
+        "width": "wrapper--full-padded",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "blocks": {
+        "related_fwJCXM": {
+          "type": "related",
+          "settings": {
+            "title": "You may also like",
+            "product_recommendations_limit": 3
+          }
+        },
+        "recent_UAzxeW": {
+          "type": "recent",
+          "settings": {
+            "title": "Recently viewed",
+            "product_recently_limit": 3
+          }
+        }
+      },
+      "block_order": [
+        "related_fwJCXM",
+        "recent_UAzxeW"
+      ],
+      "settings": {
+        "enable_tabs": false,
+        "layout": "grid",
+        "columns_mobile": "2",
+        "type_style": "font-heading",
+        "tab_heading_size": 135,
+        "color_scheme": "scheme-2",
+        "width": "wrapper",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "section_icons_row_cKEWpK": {
+      "type": "section-icons-row",
+      "blocks": {
+        "text_KXVECB": {
+          "type": "text",
+          "settings": {
+            "icon_name": "none",
+            "title": "New customers get 15% off",
+            "text": "<p>on your first purchase</p>"
+          }
+        },
+        "text_bELHWq": {
+          "type": "text",
+          "settings": {
+            "icon_name": "none",
+            "title": "Free shipping",
+            "text": "<p>on orders over $100</p>"
+          }
+        },
+        "text_btzGpi": {
+          "type": "text",
+          "settings": {
+            "icon_name": "none",
+            "title": "ShopPay ",
+            "text": "<p>Buy now, pay later</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_KXVECB",
+        "text_bELHWq",
+        "text_btzGpi"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "alignment": "center",
+        "columns": 3,
+        "icons_width": 20,
+        "show_vertical_borders": true,
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "heading_size": 100,
+        "text_size": 90,
+        "color_scheme": "scheme-6",
+        "text_color": "#333333",
+        "box_color": "",
+        "color_border": "#333333",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "btn--black",
+        "button_style": "btn--solid",
+        "button_size": "btn--small",
+        "layout_mobile": "grid",
+        "width": "wrapper",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "166716198631433af0",
+    "section_testimonials_abpgFU",
+    "section_columns_TBzVUw",
+    "related",
+    "section_icons_row_cKEWpK"
+  ]
+}

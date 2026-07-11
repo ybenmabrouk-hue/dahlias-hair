@@ -1,163 +1,63 @@
 <!doctype html>
-<html
-  lang="{{ request.locale.iso_code }}"
-  dir="{% if request.locale.iso_code == 'ar' %}rtl{% else %}ltr{% endif %}"
->
+<html class="no-touch page-loading" lang="{{ request.locale.iso_code }}">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="{{ settings.color_bg }}">
-
-    <title>
-      {{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
-      {% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}
-      {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
-    </title>
-
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
-
-    <link rel="canonical" href="{{ canonical_url }}">
-
-    {%- if settings.favicon != blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-    {%- endif -%}
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Raleway:wght@300;400;500&family=Tajawal:wght@400;500&display=swap"
-      rel="stylesheet"
-    >
-
-    <!-- CSS custom properties (design tokens) -->
-    <style>
-      :root {
-        --color-bg: {{ settings.color_bg }};
-        --color-primary: {{ settings.color_primary }};
-        --color-white: {{ settings.color_white }};
-        --color-gold: {{ settings.color_gold }};
-        --color-muted: {{ settings.color_muted }};
-
-        --font-heading: 'Cormorant Garamond', Georgia, serif;
-        --font-body: 'Raleway', Arial, sans-serif;
-        --font-arabic: 'Tajawal', Arial, sans-serif;
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        font-size: 16px;
-        scroll-behavior: smooth;
-      }
-
-      body {
-        background-color: var(--color-bg);
-        color: var(--color-primary);
-        font-family: var(--font-body);
-        font-weight: 400;
-        line-height: 1.6;
-      }
-
-      [lang="ar"] body,
-      [lang="ar"] {
-        font-family: var(--font-arabic);
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        font-family: var(--font-heading);
-        font-weight: 300;
-        line-height: 1.2;
-      }
-
-      [lang="ar"] h1,
-      [lang="ar"] h2,
-      [lang="ar"] h3,
-      [lang="ar"] h4,
-      [lang="ar"] h5,
-      [lang="ar"] h6 {
-        font-family: var(--font-arabic);
-        font-weight: 500;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-    </style>
+    {%- render 'head' -%}
 
     {{ content_for_header }}
+  </head>{%- capture body_classes -%}
+template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
+{% if customer %} customer-logged-in{% endif %}
+{% if settings.show_rounded_corners %} body--rounded-corners{% endif %}
+{% if settings.animations_enabled %} aos-initialized{% endif %}
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'header.css' | asset_url | stylesheet_tag }}
-    {{ 'footer.css' | asset_url | stylesheet_tag }}
-    {{ 'section-hero.css' | asset_url | stylesheet_tag }}
-    {{ 'section-trust-bar.css' | asset_url | stylesheet_tag }}
-    {{ 'section-problem-solution.css' | asset_url | stylesheet_tag }}
-    {{ 'section-feature-highlights.css' | asset_url | stylesheet_tag }}
-    {{ 'section-bundle-showcase.css' | asset_url | stylesheet_tag }}
-    {{ 'section-how-it-works.css' | asset_url | stylesheet_tag }}
-    {{ 'section-social-proof.css' | asset_url | stylesheet_tag }}
-    {{ 'section-faq.css' | asset_url | stylesheet_tag }}
-    {{ 'section-sticky-cart-bar.css' | asset_url | stylesheet_tag }}
-    {{ 'section-product-dahlia.css' | asset_url | stylesheet_tag }}
-    {{ 'payment-features.css' | asset_url | stylesheet_tag }}
-    {{ 'whatsapp-float.css' | asset_url | stylesheet_tag }}
-    {{ 'section-page-how-to-use.css' | asset_url | stylesheet_tag }}
-    {{ 'section-page-reviews.css' | asset_url | stylesheet_tag }}
-    {{ 'section-page-contact.css' | asset_url | stylesheet_tag }}
-  </head>
+{%- assign selected_color_scheme = settings.color_scheme | strip -%}
+{%- assign scheme_bg_color = settings.color_schemes[selected_color_scheme].settings.section_bg -%}
+{%- assign scheme_bg_color_brightness = scheme_bg_color | color_brightness | round -%}
+{% if scheme_bg_color_brightness < 153 %} palette--dark{% else %} palette--light{% endif %}
+  no-outline
+{%- endcapture -%}
+{%- assign body_classes = body_classes | strip_newlines | strip -%}<body id="{{ page_title | handle }}" class="{{ body_classes }}">
+    {%- render 'loading' -%}
 
-  <body>
-    <a class="skip-to-content" href="#MainContent">
-      {{ 'accessibility.skip_to_content' | t }}
+    <a class="in-page-link skip-link" data-skip-content href="#MainContent">
+      {{- 'general.accessibility.skip_to_content' | t -}}
     </a>
 
-    {% section 'header' %}
+    <div class="header-group">
+      {% sections 'group-header' %}
+    </div>
+    {% sections 'group-overlay' %}
 
-    <main id="MainContent" role="main" tabindex="-1">
+    <main id="MainContent" class="main-content" data-main>
       {{ content_for_layout }}
     </main>
 
-    {% section 'footer' %}
+    {% sections 'group-footer' %}
 
-    {%- render 'whatsapp-float' -%}
+    {%- comment -%} Photoswipe containers {%- endcomment -%}
+    {%- render 'zoom-pswp', template_index: 0 -%}
+    {%- render 'zoom-pswp', template_index: 1 -%}
 
-    <script>
-      window.Shopify = window.Shopify || {};
-      window.Shopify.currency = {
-        active: {{ cart.currency.iso_code | json }},
-        rate: '1.0'
-      };
-      window.theme = {
-        locale: {{ request.locale.iso_code | json }},
-        rtl: {{ request.locale.iso_code | json }} === 'ar',
-        moneyFormat: {{ shop.money_format | json }},
-        moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
-        currencySymbol: {{ settings.currency_symbol | json }},
-        currencySymbolPosition: {{ settings.currency_symbol_position | json }}
-      };
-    </script>
+    {%- if settings.show_scroll_to_top -%}
+      <button
+        type="button"
+        class="btn btn--primary btn--solid btn--scroll-top"
+        data-scroll-top-button
+        aria-label="{{ 'general.accessibility.scroll_to_top' | t }}"
+      >
+        <hover-button></hover-button>
+        {% render 'icon-select' %}
+      </button>
+    {%- endif -%}
 
-    {{ 'header.js' | asset_url | script_tag }}
-    {{ 'section-feature-highlights.js' | asset_url | script_tag }}
-    {{ 'section-social-proof.js' | asset_url | script_tag }}
-    {{ 'section-faq.js' | asset_url | script_tag }}
-    {{ 'section-sticky-cart-bar.js' | asset_url | script_tag }}
-    {{ 'section-product-dahlia.js' | asset_url | script_tag }}
+    {%- comment -%}
+      In order to use your custom javascript file at assets/custom.js
+      just cut this next line and paste it outside this comment:
+      <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+    {%- endcomment -%}
+
+    <!-- Paste marketing code or third party scripts below this comment line ============== -->
+
+    <!-- And above this comment line ================================================== -->
   </body>
 </html>
