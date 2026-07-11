@@ -17,7 +17,7 @@
         "announcement-0": {
           "type": "text",
           "settings": {
-            "text": "<p>Free worldwide shipping</p>",
+            "text": "<p>Free shipping over $200</p>",
             "text_color": "",
             "heading_highlight_type": "circle",
             "highlight_color": "#d43747",
