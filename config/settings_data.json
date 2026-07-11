@@ -18,6 +18,7 @@
     "text_size": 105,
     "type_nav_font": "body",
     "nav_font_weight": "light",
+    "nav_caps_toplevel": false,
     "nav_size": 90,
     "nav_top_level_links_size": 80,
     "nav_letter_spacing": 50,
